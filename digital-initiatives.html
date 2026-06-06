@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="BML Digital Initiatives — ERP systems, CCTV monitoring, fiber network, data centers, smart mining, and OITDS truck dispatch.">
+  <title>Digital Initiatives — Bharat Minerals Limited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ACCESSIBILITY BAR -->
+  <div class="a11y-bar" id="a11yBar">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-3">
+        <span class="opacity-70 text-xs uppercase tracking-widest mr-2">Accessibility</span>
+        <button id="btnEn" class="active" onclick="setLang('en')">English</button>
+        <button id="btnHi" onclick="setLang('hi')">हिन्दी</button>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="opacity-70 text-xs uppercase tracking-widest mr-1">Text</span>
+        <button onclick="resizeText(-1)">A−</button>
+        <button onclick="resizeText(0)">A</button>
+        <button onclick="resizeText(1)">A+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee-track py-2">
+    <div class="marquee-content">
+      ◆ EXTENSION: Tender NIT-MIN-2026-089 deadline extended to June 15. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ NOTICE: Bidders are requested to update their structural KYC credentials on the CPPP portal immediately. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ EXTENSION: Tender NIT-MIN-2026-089 deadline extended to June 15. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ NOTICE: Bidders are requested to update their structural KYC credentials on the CPPP portal immediately.
+    </div>
+  </div>
+
+  <!-- STICKY NAVBAR -->
+  <nav class="main-nav" id="mainNav">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="logomark">BM</div>
+        <div>
+          <div class="text-white font-extrabold text-lg leading-tight" data-i18n="brandName">Bharat Minerals Limited</div>
+          <div class="text-gray-400 text-xs font-medium tracking-wider">A Govt. of India Enterprise</div>
+        </div>
+      </a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <div class="nav-links flex items-center gap-1" id="navLinks">
+        <a href="index.html" class="nav-link" data-i18n="navHome">Home</a>
+        <a href="about.html" class="nav-link" data-i18n="navAbout">About Us</a>
+        <a href="business.html" class="nav-link" data-i18n="navBusiness">Our Business</a>
+        <a href="csit.html" class="nav-link" data-i18n="navCSIT">CS&amp;IT Department</a>
+        <a href="digital-initiatives.html" class="nav-link active" data-i18n="navDigital">Digital Initiatives</a>
+        <a href="tenders.html" class="nav-link" data-i18n="navProcurement">Procurement</a>
+        <a href="governance.html" class="nav-link" data-i18n="navGovernance">Governance &amp; Contact</a>
+        <a href="portal-login.html" class="nav-link" data-i18n="navPortal">CS&amp;IT Portal</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="max-w-7xl mx-auto px-4 pt-12 pb-6">
+      <div class="accent-bar mb-4"></div>
+      <h1 class="text-4xl font-black text-gray-900 mb-2" data-i18n="digitalTitle">Digital Initiatives</h1>
+      <p class="text-gray-500 text-lg max-w-3xl" data-i18n="digitalSubtitle">Transforming BML's mining operations through enterprise technology — from integrated ERP and real-time surveillance to fiber connectivity and intelligent dispatch systems.</p>
+    </section>
+
+    <!-- SUMMARY METRICS -->
+    <section class="max-w-7xl mx-auto px-4 mb-12">
+      <div class="metric-ribbon">
+        <div class="flex flex-wrap">
+          <div class="metric-item">
+            <div class="metric-icon">✅</div>
+            <div class="metric-value">4</div>
+            <div class="metric-label">Live Systems</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-icon">🔄</div>
+            <div class="metric-value">2</div>
+            <div class="metric-label">In Progress</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-icon">📡</div>
+            <div class="metric-value">850+ km</div>
+            <div class="metric-label">Fiber Network</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-icon">🏢</div>
+            <div class="metric-value">2</div>
+            <div class="metric-label">Data Centers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INITIATIVE CARDS -->
+    <section class="max-w-7xl mx-auto px-4 mb-20">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="initiative-card">
+          <div class="initiative-icon">📊</div>
+          <span class="initiative-status live"><span class="status-dot"></span> Live</span>
+          <h3 class="text-xl font-bold mb-2">ERP Systems</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Enterprise-wide SAP S/4HANA deployment covering Finance, MM, HR, and PM modules across all 12 mine sites. Integrated with production reporting, payroll, and statutory compliance workflows.</p>
+          <div class="text-xs text-gray-400">Deployed: 2019 &nbsp;|&nbsp; Users: 8,500+</div>
+        </div>
+
+        <div class="initiative-card">
+          <div class="initiative-icon">📹</div>
+          <span class="initiative-status live"><span class="status-dot"></span> Live</span>
+          <h3 class="text-xl font-bold mb-2">CCTV Monitoring</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Centralized IP-based surveillance across mine perimeters, processing plants, weighbridges, and corporate offices. 1,200+ cameras with AI-enabled anomaly detection and 90-day archival storage.</p>
+          <div class="text-xs text-gray-400">Cameras: 1,200+ &nbsp;|&nbsp; Sites: 15</div>
+        </div>
+
+        <div class="initiative-card">
+          <div class="initiative-icon">🔗</div>
+          <span class="initiative-status progress"><span class="status-dot"></span> In Progress</span>
+          <h3 class="text-xl font-bold mb-2">Fiber Network</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Core fiber ring network connecting all mine sites, regional offices, and data centers. Phase 2 expansion underway to extend connectivity to 3 additional greenfield project sites in Odisha and Chhattisgarh.</p>
+          <div class="text-xs text-gray-400">Coverage: 850 km &nbsp;|&nbsp; Completion: Q4 2026</div>
+        </div>
+
+        <div class="initiative-card">
+          <div class="initiative-icon">🏢</div>
+          <span class="initiative-status live"><span class="status-dot"></span> Live</span>
+          <h3 class="text-xl font-bold mb-2">Data Centers</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Tier-III primary data center at New Delhi HQ and Tier-II DR site at Bhubaneswar. Hosts ERP, email, file services, and backup infrastructure with geo-redundant replication and automated failover.</p>
+          <div class="text-xs text-gray-400">Uptime: 99.95% &nbsp;|&nbsp; RPO: &lt; 4 hrs</div>
+        </div>
+
+        <div class="initiative-card">
+          <div class="initiative-icon">⛏️</div>
+          <span class="initiative-status progress"><span class="status-dot"></span> In Progress</span>
+          <h3 class="text-xl font-bold mb-2">Smart Mining Technologies</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">IoT sensor networks, GPS fleet tracking, drone-based volumetric surveys, and real-time production dashboards. Pilot deployment at Bellary and Keonjhar mines with full rollout planned by 2027.</p>
+          <div class="text-xs text-gray-400">Pilot Sites: 2 &nbsp;|&nbsp; Rollout: 2027</div>
+        </div>
+
+        <div class="initiative-card">
+          <div class="initiative-icon">🚛</div>
+          <span class="initiative-status live"><span class="status-dot"></span> Live</span>
+          <h3 class="text-xl font-bold mb-2">OITDS Truck Dispatch System</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Online Integrated Truck Dispatch System for automated weighbridge integration, queue management, and real-time ore movement tracking from pit to port. Processes 2,000+ truck movements daily across 8 loading points.</p>
+          <div class="text-xs text-gray-400">Daily Trips: 2,000+ &nbsp;|&nbsp; Loading Points: 8</div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- MEGA FOOTER -->
+  <footer class="main-footer">
+    <div class="max-w-7xl mx-auto px-4 py-14">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="business.html">Mineral Portfolio</a>
+          <a href="csit.html">CS&amp;IT Department</a>
+          <a href="digital-initiatives.html">Digital Initiatives</a>
+          <a href="tenders.html">E-Procurement</a>
+          <a href="governance.html">RTI &amp; Governance</a>
+          <a href="portal-login.html">CS&amp;IT Portal</a>
+          <a href="#">Careers</a>
+          <a href="#">Investor Relations</a>
+        </div>
+        <div>
+          <h4>Statutory Compliance</h4>
+          <a href="#">Mines Act, 1952 Compliance</a>
+          <a href="#">MMDR Act Adherence</a>
+          <a href="#">Environmental Clearances</a>
+          <a href="#">SEBI LODR Filings</a>
+          <a href="#">Vigilance &amp; Anti-Corruption</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p class="text-sm leading-relaxed mb-2">BML Corporate HQ<br>Khanij Bhavan, Sector 14<br>New Delhi — 110 001</p>
+          <a href="tel:+911123456789">☎ +91-11-2345-6789</a>
+          <a href="mailto:it@bml.gov.in">✉ it@bml.gov.in</a>
+        </div>
+        <div>
+          <h4>Affiliations</h4>
+          <div class="footer-badge mb-3"><div class="text-amber-400 font-bold text-sm mb-1">Ministry of Mines</div><div class="text-xs">Government of India</div></div>
+          <div class="footer-badge"><div class="text-amber-400 font-bold text-sm mb-1">ISO 9001:2015</div><div class="text-xs">Quality Management Certified</div></div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-10 pt-6 text-center text-xs text-gray-500">
+        © 2026 Bharat Minerals Limited. All Rights Reserved. | A Government of India Enterprise under Ministry of Mines.
+      </div>
+    </div>
+  </footer>
+
+  <script src="shared.js"></script>
+  <script>
+    const pageTranslations = {
+      en: { brandName:'Bharat Minerals Limited', navHome:'Home', navAbout:'About Us', navBusiness:'Our Business', navCSIT:'CS&IT Department', navDigital:'Digital Initiatives', navProcurement:'Procurement', navGovernance:'Governance & Contact', navPortal:'CS&IT Portal', digitalTitle:'Digital Initiatives', digitalSubtitle:'Transforming BML\'s mining operations through enterprise technology — from integrated ERP and real-time surveillance to fiber connectivity and intelligent dispatch systems.' },
+      hi: { brandName:'भारत खनिज लिमिटेड', navHome:'मुखपृष्ठ', navAbout:'हमारे बारे में', navBusiness:'हमारा व्यवसाय', navCSIT:'CS&IT विभाग', navDigital:'डिजिटल पहल', navProcurement:'खरीद', navGovernance:'शासन एवं संपर्क', navPortal:'CS&IT पोर्टल', digitalTitle:'डिजिटल पहल', digitalSubtitle:'एंटरप्राइज तकनीक के माध्यम से BML के खनन संचालन का रूपांतरण।' }
+    };
+  </script>
+</body>
+</html>

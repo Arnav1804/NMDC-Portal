@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="About Bharat Minerals Limited — Company overview, history, mission, core values, and future growth vision.">
+  <title>About Us — Bharat Minerals Limited</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ACCESSIBILITY BAR -->
+  <div class="a11y-bar" id="a11yBar">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-3">
+        <span class="opacity-70 text-xs uppercase tracking-widest mr-2">Accessibility</span>
+        <button id="btnEn" class="active" onclick="setLang('en')">English</button>
+        <button id="btnHi" onclick="setLang('hi')">हिन्दी</button>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="opacity-70 text-xs uppercase tracking-widest mr-1">Text</span>
+        <button onclick="resizeText(-1)">A−</button>
+        <button onclick="resizeText(0)">A</button>
+        <button onclick="resizeText(1)">A+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee-track py-2">
+    <div class="marquee-content">
+      ◆ EXTENSION: Tender NIT-MIN-2026-089 deadline extended to June 15. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ NOTICE: Bidders are requested to update their structural KYC credentials on the CPPP portal immediately. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ EXTENSION: Tender NIT-MIN-2026-089 deadline extended to June 15. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ NOTICE: Bidders are requested to update their structural KYC credentials on the CPPP portal immediately.
+    </div>
+  </div>
+
+  <!-- STICKY NAVBAR -->
+  <nav class="main-nav" id="mainNav">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="logomark">BM</div>
+        <div>
+          <div class="text-white font-extrabold text-lg leading-tight" data-i18n="brandName">Bharat Minerals Limited</div>
+          <div class="text-gray-400 text-xs font-medium tracking-wider">A Govt. of India Enterprise</div>
+        </div>
+      </a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <div class="nav-links flex items-center gap-1" id="navLinks">
+        <a href="index.html" class="nav-link" data-i18n="navHome">Home</a>
+        <a href="about.html" class="nav-link active" data-i18n="navAbout">About Us</a>
+        <a href="business.html" class="nav-link" data-i18n="navBusiness">Our Business</a>
+        <a href="csit.html" class="nav-link" data-i18n="navCSIT">CS&amp;IT Department</a>
+        <a href="digital-initiatives.html" class="nav-link" data-i18n="navDigital">Digital Initiatives</a>
+        <a href="tenders.html" class="nav-link" data-i18n="navProcurement">Procurement</a>
+        <a href="governance.html" class="nav-link" data-i18n="navGovernance">Governance &amp; Contact</a>
+        <a href="portal-login.html" class="nav-link" data-i18n="navPortal">CS&amp;IT Portal</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="max-w-7xl mx-auto px-4 pt-12 pb-6">
+      <div class="accent-bar mb-4"></div>
+      <h1 class="text-4xl font-black text-gray-900 mb-2" data-i18n="aboutTitle">About Bharat Minerals Limited</h1>
+      <p class="text-gray-500 text-lg max-w-3xl" data-i18n="aboutSubtitle">A premier Public Sector Undertaking under the Ministry of Mines, driving India's mineral security and industrial growth for over six decades.</p>
+    </section>
+
+    <!-- COMPANY OVERVIEW -->
+    <section class="max-w-7xl mx-auto px-4 mb-16">
+      <div class="overview-block">
+        <span class="inline-block text-amber-500 text-xs font-bold uppercase tracking-widest mb-3">Company Overview</span>
+        <h2 class="section-heading mb-4">India's Strategic Mining Enterprise</h2>
+        <p class="text-gray-600 leading-relaxed mb-4">Bharat Minerals Limited (BML) is a Navratna-category Public Sector Undertaking engaged in the exploration, extraction, and processing of iron ore, bauxite, and coal across 12 operational mine sites spanning six states. Established to secure India's mineral self-reliance, BML supplies critical raw materials to the steel, aluminium, and power sectors.</p>
+        <p class="text-gray-600 leading-relaxed">With an annual turnover exceeding ₹4,500 crore and a workforce of 8,500+ professionals, BML combines deep geological expertise with modern mechanization, environmental stewardship, and digital innovation to deliver sustainable mining outcomes aligned with national development priorities.</p>
+      </div>
+    </section>
+
+    <!-- HISTORY & LEGACY -->
+    <section class="max-w-7xl mx-auto px-4 mb-16">
+      <div class="grid md:grid-cols-2 gap-12 items-start">
+        <div>
+          <div class="accent-bar mb-4"></div>
+          <h2 class="section-heading mb-4">History &amp; Legacy</h2>
+          <p class="text-gray-500 leading-relaxed">From a single iron ore mine in Karnataka to a multi-mineral mining conglomerate, BML's journey reflects India's industrial evolution and the nation's commitment to harnessing its mineral wealth responsibly.</p>
+        </div>
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-year">1958</div>
+            <h3>Foundation</h3>
+            <p>Incorporated as a Government of India enterprise to develop India's first large-scale iron ore mining operations in the Bellary-Hospet belt.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">1975</div>
+            <h3>Multi-Mineral Expansion</h3>
+            <p>Commenced bauxite mining in the Eastern Ghats, establishing supply chains to India's emerging aluminium industry.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2005</div>
+            <h3>Navratna Status</h3>
+            <p>Awarded Navratna recognition for operational excellence, financial performance, and strategic importance to the national economy.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2018</div>
+            <h3>Digital Transformation</h3>
+            <p>Launched enterprise-wide ERP integration, fiber network backbone, and smart mining technologies across all operational sites.</p>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-year">2026</div>
+            <h3>Vision 2030 Roadmap</h3>
+            <p>Charting a path to 100 MT annual mining capacity through sustainable expansion, AI-driven exploration, and zero-harm safety culture.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MISSION & VISION -->
+    <section class="max-w-7xl mx-auto px-4 mb-16">
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="vision-block p-10">
+          <span class="inline-block text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">Our Mission</span>
+          <h2 class="text-2xl font-black mb-4 leading-snug">Secure India's Mineral Future</h2>
+          <p class="text-gray-300 leading-relaxed">To explore, extract, and deliver strategic minerals with uncompromising safety standards, environmental responsibility, and operational excellence — empowering India's infrastructure, manufacturing, and energy sectors.</p>
+        </div>
+        <div class="vision-block p-10" style="background: linear-gradient(135deg, #162044 0%, #1E3A5F 100%);">
+          <span class="inline-block text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">Our Vision</span>
+          <h2 class="text-2xl font-black mb-4 leading-snug">Global Mining Leadership by 2030</h2>
+          <p class="text-gray-300 leading-relaxed">To be recognized as a world-class, technology-driven mining enterprise that sets benchmarks in sustainable practices, workforce development, and contribution to India's economic self-reliance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE VALUES -->
+    <section class="max-w-7xl mx-auto px-4 mb-16">
+      <div class="text-center mb-10">
+        <div class="accent-bar mx-auto mb-4"></div>
+        <h2 class="section-heading">Core Values</h2>
+        <p class="section-subheading mx-auto mt-2">The principles that guide every decision, operation, and interaction at Bharat Minerals Limited.</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="award-card">
+          <div class="award-icon">🛡️</div>
+          <h3 class="font-bold text-sm mb-1">Safety First</h3>
+          <p class="text-xs text-gray-500">Zero-harm culture with DGMS-compliant protocols across all mine sites and processing facilities.</p>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">🌿</div>
+          <h3 class="font-bold text-sm mb-1">Environmental Stewardship</h3>
+          <p class="text-xs text-gray-500">Progressive mine closure, afforestation, and water conservation integrated into every project lifecycle.</p>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">⚖️</div>
+          <h3 class="font-bold text-sm mb-1">Integrity &amp; Transparency</h3>
+          <p class="text-xs text-gray-500">Highest standards of corporate governance, RTI compliance, and ethical business conduct.</p>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">💡</div>
+          <h3 class="font-bold text-sm mb-1">Innovation</h3>
+          <p class="text-xs text-gray-500">Continuous adoption of advanced geology, automation, and digital technologies for operational excellence.</p>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">🤝</div>
+          <h3 class="font-bold text-sm mb-1">Community Partnership</h3>
+          <p class="text-xs text-gray-500">CSR initiatives in education, healthcare, and livelihood generation for mining-affected communities.</p>
+        </div>
+        <div class="award-card">
+          <div class="award-icon">🏆</div>
+          <h3 class="font-bold text-sm mb-1">Excellence</h3>
+          <p class="text-xs text-gray-500">Commitment to quality, efficiency, and continuous improvement in all operational dimensions.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY STATISTICS -->
+    <section class="max-w-7xl mx-auto px-4 mb-16">
+      <div class="text-center mb-10">
+        <div class="accent-bar mx-auto mb-4"></div>
+        <h2 class="section-heading">Key Statistics</h2>
+        <p class="section-subheading mx-auto mt-2">BML at a glance — operational scale and national impact.</p>
+      </div>
+      <div class="metric-ribbon">
+        <div class="flex flex-wrap">
+          <div class="metric-item">
+            <div class="metric-icon">⛏️</div>
+            <div class="metric-value" data-count="12">12</div>
+            <div class="metric-label">Active Mine Sites</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-icon">📦</div>
+            <div class="metric-value" data-count="45" data-suffix=" MT">45 MT</div>
+            <div class="metric-label">Annual Production</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-icon">👷</div>
+            <div class="metric-value" data-count="8500" data-suffix="+">8,500+</div>
+            <div class="metric-label">Employees Nationwide</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-icon">🗺️</div>
+            <div class="metric-value" data-count="6">6</div>
+            <div class="metric-label">Operational States</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUTURE GROWTH VISION -->
+    <section class="max-w-7xl mx-auto px-4 mb-20">
+      <div class="vision-block p-10">
+        <span class="inline-block text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">Future Growth Vision</span>
+        <h2 class="text-3xl font-black mb-4 leading-snug">Envisioning 100 MT Mining Capacity by 2030</h2>
+        <p class="text-gray-300 leading-relaxed mb-6">BML's strategic roadmap focuses on tripling extraction capacity through brownfield mine expansions, greenfield project development, and advanced mechanization. Key growth pillars include AI-driven geological exploration, integrated logistics corridors, renewable energy adoption at mine sites, and a fully digitized operational backbone managed by the CS&amp;IT Department.</p>
+        <div class="grid md:grid-cols-3 gap-6 mt-8">
+          <div class="award-card" style="background: rgba(255,255,255,0.06); border-color: rgba(255,184,28,0.2);">
+            <div class="award-icon">🚀</div>
+            <h3 class="font-bold text-sm mb-1 text-white">Capacity Expansion</h3>
+            <p class="text-xs text-gray-400">New captive coal blocks and iron ore leases under MMDR auction framework.</p>
+          </div>
+          <div class="award-card" style="background: rgba(255,255,255,0.06); border-color: rgba(255,184,28,0.2);">
+            <div class="award-icon">🤖</div>
+            <h3 class="font-bold text-sm mb-1 text-white">Smart Mining</h3>
+            <p class="text-xs text-gray-400">IoT sensors, autonomous haulage, and real-time production analytics.</p>
+          </div>
+          <div class="award-card" style="background: rgba(255,255,255,0.06); border-color: rgba(255,184,28,0.2);">
+            <div class="award-icon">🌱</div>
+            <h3 class="font-bold text-sm mb-1 text-white">Sustainability</h3>
+            <p class="text-xs text-gray-400">Carbon-neutral operations target and 5,000 Ha additional eco-restoration by 2030.</p>
+          </div>
+        </div>
+        <div class="flex items-center gap-3 text-amber-400 font-bold text-sm mt-8">
+          <span class="w-2 h-2 bg-amber-400 rounded-full"></span>
+          Aligned with Government of India — Make in India &amp; Atmanirbhar Bharat Initiatives
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MEGA FOOTER -->
+  <footer class="main-footer">
+    <div class="max-w-7xl mx-auto px-4 py-14">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="business.html">Mineral Portfolio</a>
+          <a href="csit.html">CS&amp;IT Department</a>
+          <a href="digital-initiatives.html">Digital Initiatives</a>
+          <a href="tenders.html">E-Procurement</a>
+          <a href="governance.html">RTI &amp; Governance</a>
+          <a href="portal-login.html">CS&amp;IT Portal</a>
+          <a href="#">Careers</a>
+          <a href="#">Investor Relations</a>
+        </div>
+        <div>
+          <h4>Statutory Compliance</h4>
+          <a href="#">Mines Act, 1952 Compliance</a>
+          <a href="#">MMDR Act Adherence</a>
+          <a href="#">Environmental Clearances</a>
+          <a href="#">SEBI LODR Filings</a>
+          <a href="#">Vigilance &amp; Anti-Corruption</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p class="text-sm leading-relaxed mb-2">BML Corporate HQ<br>Khanij Bhavan, Sector 14<br>New Delhi — 110 001</p>
+          <a href="tel:+911123456789">☎ +91-11-2345-6789</a>
+          <a href="mailto:info@bml.gov.in">✉ info@bml.gov.in</a>
+        </div>
+        <div>
+          <h4>Affiliations</h4>
+          <div class="footer-badge mb-3"><div class="text-amber-400 font-bold text-sm mb-1">Ministry of Mines</div><div class="text-xs">Government of India</div></div>
+          <div class="footer-badge"><div class="text-amber-400 font-bold text-sm mb-1">ISO 9001:2015</div><div class="text-xs">Quality Management Certified</div></div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-10 pt-6 text-center text-xs text-gray-500">
+        © 2026 Bharat Minerals Limited. All Rights Reserved. | A Government of India Enterprise under Ministry of Mines.
+      </div>
+    </div>
+  </footer>
+
+  <script src="shared.js"></script>
+  <script>
+    const pageTranslations = {
+      en: { brandName:'Bharat Minerals Limited', navHome:'Home', navAbout:'About Us', navBusiness:'Our Business', navCSIT:'CS&IT Department', navDigital:'Digital Initiatives', navProcurement:'Procurement', navGovernance:'Governance & Contact', navPortal:'CS&IT Portal', aboutTitle:'About Bharat Minerals Limited', aboutSubtitle:'A premier Public Sector Undertaking under the Ministry of Mines, driving India\'s mineral security and industrial growth for over six decades.' },
+      hi: { brandName:'भारत खनिज लिमिटेड', navHome:'मुखपृष्ठ', navAbout:'हमारे बारे में', navBusiness:'हमारा व्यवसाय', navCSIT:'CS&IT विभाग', navDigital:'डिजिटल पहल', navProcurement:'खरीद', navGovernance:'शासन एवं संपर्क', navPortal:'CS&IT पोर्टल', aboutTitle:'भारत खनिज लिमिटेड के बारे में', aboutSubtitle:'खान मंत्रालय के अंतर्गत एक प्रमुख लोक क्षेत्र उपक्रम।' }
+    };
+  </script>
+</body>
+</html>
