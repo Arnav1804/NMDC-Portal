@@ -5,7 +5,7 @@ A frontend prototype of a departmental IT operations portal — covering documen
 > **Note:** This is a self-directed concept prototype built to explore and propose UI/UX and information-architecture improvements for internal departmental workflows. It is **not an official NMDC deliverable** and was not deployed by the organization.
 
 ## Live Demo
-🔗 [View the live prototype](#) <!-- replace with your GitHub Pages link -->
+🔗 https://arnav1804.github.io/NMDC-Portal/
 
 ## About the Project
 
