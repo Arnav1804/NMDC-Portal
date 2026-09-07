@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="nmdcGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFB81C" />
+      <stop offset="100%" stop-color="#C85A17" />
+    </linearGradient>
+  </defs>
+  <!-- Background Badge -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="#0A1128" stroke="url(#nmdcGrad)" stroke-width="3"/>
+  <!-- Top Accent Bar -->
+  <rect x="12" y="10" width="40" height="4" rx="2" fill="url(#nmdcGrad)" />
+  <!-- Text NMDC -->
+  <text x="32" y="42" font-family="'Inter', system-ui, -apple-system, sans-serif" font-weight="900" font-size="19" fill="#FFB81C" text-anchor="middle" letter-spacing="-0.5">NMDC</text>
+</svg>

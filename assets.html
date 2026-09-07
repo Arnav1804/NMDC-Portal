@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NMDC CS&amp;IT Portal — IT Asset Management System for infrastructure tracking at NMDC Limited, Bacheli Complex.">
+  <title>IT Asset Register — NMDC Limited, Bacheli Complex</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body class="portal-body">
+
+  <div class="portal-layout">
+
+    <aside class="portal-sidebar" id="portalSidebar">
+      <div class="portal-sidebar-brand">
+        <div class="flex items-center gap-3">
+          <div class="logomark" style="width:38px;height:38px;font-size:0.95rem;" title="NMDC Limited, Bacheli Complex">NC</div>
+          <div>
+            <div class="brand-title">CS&amp;IT Portal</div>
+            <div class="brand-sub">Bacheli Regional Office</div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="portal-nav" aria-label="Portal navigation">
+        <a href="portal.html" class="portal-nav-link" data-page="dashboard">
+          <span class="portal-nav-icon">📊</span> Dashboard
+        </a>
+        <a href="documents.html" class="portal-nav-link" data-page="documents">
+          <span class="portal-nav-icon">📄</span> Documents
+        </a>
+        <a href="assets.html" class="portal-nav-link active" data-page="assets">
+          <span class="portal-nav-icon">🖥️</span> Assets
+        </a>
+        <a href="tickets.html" class="portal-nav-link" data-page="tickets">
+          <span class="portal-nav-icon">🎫</span> Tickets
+        </a>
+        <a href="audit-logs.html" class="portal-nav-link" data-page="audit">
+          <span class="portal-nav-icon">📋</span> Audit Logs
+        </a>
+      </nav>
+
+      <div class="portal-sidebar-footer">
+        <a href="index.html" class="portal-back-link">
+          <span>←</span> Back to Main Website
+        </a>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="togglePortalSidebar()"></div>
+
+    <div class="portal-main">
+
+      <header class="portal-header">
+        <div class="portal-header-left">
+          <button class="portal-menu-toggle" onclick="togglePortalSidebar()" aria-label="Toggle sidebar">☰</button>
+          <div class="portal-welcome" id="portalWelcome">
+            <div class="welcome-text">Welcome, <span id="userName">User</span></div>
+            <div class="role-text">Role: <span id="userRole">—</span> <span class="role-badge" id="roleBadge"></span></div>
+          </div>
+        </div>
+        <div class="portal-header-right">
+          <div id="notifBell"></div>
+          <button class="btn-logout" onclick="portalLogout()">Logout</button>
+        </div>
+      </header>
+
+      <main class="portal-content">
+        <div class="portal-page-title">
+          <h1>Asset Management System</h1>
+          <p>Track and manage IT infrastructure assets — Bacheli CS&amp;IT Regional Office</p>
+        </div>
+
+        <!-- KPI SUMMARY -->
+        <div class="kpi-grid kpi-grid-4" id="kpiGrid">
+          <div class="dashboard-kpi">
+            <div class="kpi-icon">🖥️</div>
+            <div class="kpi-value" id="kpiTotal">0</div>
+            <div class="kpi-label">Total Assets</div>
+          </div>
+          <div class="dashboard-kpi">
+            <div class="kpi-icon">✅</div>
+            <div class="kpi-value" id="kpiActive">0</div>
+            <div class="kpi-label">Active Assets</div>
+          </div>
+          <div class="dashboard-kpi">
+            <div class="kpi-icon">🔧</div>
+            <div class="kpi-value" id="kpiMaintenance">0</div>
+            <div class="kpi-label">Assets Under Maintenance</div>
+          </div>
+          <div class="dashboard-kpi">
+            <div class="kpi-icon">⚠️</div>
+            <div class="kpi-value" id="kpiWarranty">0</div>
+            <div class="kpi-label">Warranty Expiring Soon</div>
+          </div>
+        </div>
+
+        <!-- EMPTY STATE -->
+        <div class="docs-empty-state" id="assetsEmptyState" style="display:none;">
+          <div class="empty-icon">🖥️</div>
+          <h3>No Assets Found</h3>
+          <p>Add your first asset to begin tracking infrastructure.</p>
+          <button class="btn-primary" id="emptyAddBtn">+ Add Asset</button>
+        </div>
+
+        <!-- TOOLBAR -->
+        <div class="docs-toolbar" id="assetsToolbar">
+          <div class="docs-search-wrap">
+            <span class="docs-search-icon">🔍</span>
+            <input type="search" id="assetSearch" placeholder="Search by ID, name, category, location, or user…" aria-label="Search assets">
+          </div>
+          <button class="btn-primary" id="addAssetBtn">+ Add Asset</button>
+        </div>
+
+        <!-- FILTERS -->
+        <div class="docs-filters" id="assetsFilters">
+          <button class="filter-chip active" data-filter="all">All Assets</button>
+          <button class="filter-chip" data-filter="networking">Networking</button>
+          <button class="filter-chip" data-filter="servers">Servers</button>
+          <button class="filter-chip" data-filter="computers">Computers</button>
+          <button class="filter-chip" data-filter="printers">Printers</button>
+          <button class="filter-chip" data-filter="cctv">CCTV</button>
+          <button class="filter-chip" data-filter="storage">Storage</button>
+          <button class="filter-chip" data-filter="software">Software</button>
+          <button class="filter-chip" data-filter="active">Active</button>
+          <button class="filter-chip" data-filter="maintenance">Maintenance</button>
+          <button class="filter-chip" data-filter="retired">Retired</button>
+        </div>
+
+        <!-- TABLE -->
+        <div class="docs-table-wrap" id="assetsTableWrap">
+          <div class="docs-table-scroll">
+            <table class="data-table" id="assetTable">
+              <thead>
+                <tr>
+                  <th class="sortable-th" data-sort="id">Asset ID ↕</th>
+                  <th class="sortable-th" data-sort="name">Asset Name ↕</th>
+                  <th>Category</th>
+                  <th>Location</th>
+                  <th>Assigned User</th>
+                  <th>Status</th>
+                  <th class="sortable-th" data-sort="purchaseDate">Purchase Date ↕</th>
+                  <th>Vendor</th>
+                  <th class="sortable-th" data-sort="warrantyExpiry">Warranty Expiry ↕</th>
+                  <th class="sortable-th" data-sort="lastUpdated">Last Updated ↕</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="assetTableBody"></tbody>
+            </table>
+          </div>
+
+          <!-- PAGINATION -->
+          <div class="table-pagination" id="assetPagination"></div>
+        </div>
+
+        <!-- ANALYTICS -->
+        <div class="analytics-grid" id="analyticsGrid">
+          <div class="analytics-card">
+            <h3>Assets by Category</h3>
+            <div id="chartCategory"></div>
+          </div>
+          <div class="analytics-card">
+            <h3>Assets by Location</h3>
+            <div id="chartLocation"></div>
+          </div>
+          <div class="analytics-card">
+            <h3>Assets by Status</h3>
+            <div id="chartStatus"></div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- VIEW MODAL -->
+  <div class="modal-overlay" id="viewModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <h2>Asset Details</h2>
+        <button class="modal-close" id="viewModalClose" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body" id="viewModalBody"></div>
+      <div class="modal-footer">
+        <button type="button" class="btn-primary" id="viewModalOk">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- EDIT / ADD MODAL -->
+  <div class="modal-overlay" id="editModal">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-header">
+        <h2 id="editModalTitle">Edit Asset</h2>
+        <button class="modal-close" id="editModalClose" aria-label="Close">&times;</button>
+      </div>
+
+      <form id="editForm">
+        <div class="modal-body">
+
+          <div class="form-group">
+            <label for="editAssetName">Asset Name</label>
+            <input type="text" id="editAssetName" class="form-input" placeholder="Enter asset name" required>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="form-group">
+              <label for="editCategory">Category</label>
+              <select id="editCategory" class="form-select">
+                <option value="Networking">Networking</option>
+                <option value="Server">Server</option>
+                <option value="Desktop">Desktop</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Printer">Printer</option>
+                <option value="Software License">Software License</option>
+                <option value="CCTV">CCTV</option>
+                <option value="Storage Device">Storage Device</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="editStatus">Status</label>
+              <select id="editStatus" class="form-select">
+                <option value="Active">Active</option>
+                <option value="Maintenance">Maintenance</option>
+                <option value="Inactive">Inactive</option>
+                <option value="Retired">Retired</option>
+                <option value="Warranty Expiring">Warranty Expiring</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="editLocation">Location</label>
+            <input type="text" id="editLocation" class="form-input" placeholder="e.g. Bacheli DC" required>
+          </div>
+
+          <div class="form-group">
+            <label for="editAssignedUser">Assigned User</label>
+            <input type="text" id="editAssignedUser" class="form-input" placeholder="e.g. Shri B.N. Prasad" required>
+          </div>
+
+          <div class="grid md:grid-cols-2 gap-4">
+            <div class="form-group">
+              <label for="editVendor">Vendor</label>
+              <input type="text" id="editVendor" class="form-input" placeholder="e.g. Dell Technologies">
+            </div>
+
+            <div class="form-group">
+              <label for="editPurchaseDate">Purchase Date</label>
+              <input type="date" id="editPurchaseDate" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="editWarranty">Warranty Expiry Date</label>
+            <input type="date" id="editWarranty" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label for="editDescription">Description</label>
+            <textarea id="editDescription" class="form-textarea" placeholder="Brief description of the asset"></textarea>
+          </div>
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn-secondary" id="editFormCancel">Cancel</button>
+          <button type="submit" class="btn-primary" id="editFormSubmit">Save Changes</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- DELETE CONFIRMATION -->
+  <div class="modal-overlay" id="deleteModal">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <h2>Confirm Deletion</h2>
+        <button class="modal-close" id="deleteModalClose" aria-label="Close">&times;</button>
+      </div>
+
+      <div class="modal-body">
+        <p class="delete-confirm-text" id="deleteConfirmText">Are you sure you want to remove this asset?</p>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn-secondary" id="deleteCancel">Cancel</button>
+        <button type="button" class="btn-danger" id="deleteConfirm">Delete</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="shared.js"></script>
+  <script src="assets.js"></script>
+</body>
+</html>

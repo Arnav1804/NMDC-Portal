@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NMDC CS&amp;IT Portal Dashboard — Internal IT management console for NMDC Limited, Bacheli Complex.">
+  <title>CS&amp;IT Dashboard — NMDC Limited, Bacheli Complex</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body class="portal-body">
+
+  <div class="portal-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="portal-sidebar" id="portalSidebar">
+      <div class="portal-sidebar-brand">
+        <div class="flex items-center gap-3">
+          <div class="logomark" style="width:38px;height:38px;font-size:0.95rem;" title="NMDC Limited, Bacheli Complex">NC</div>
+          <div>
+            <div class="brand-title">CS&amp;IT Portal</div>
+            <div class="brand-sub">Bacheli Regional Office</div>
+          </div>
+        </div>
+      </div>
+
+      <nav class="portal-nav" aria-label="Portal navigation">
+        <a href="portal.html" class="portal-nav-link active" data-page="dashboard">
+          <span class="portal-nav-icon">📊</span> Dashboard
+        </a>
+        <a href="documents.html" class="portal-nav-link" data-page="documents">
+          <span class="portal-nav-icon">📄</span> Documents
+        </a>
+        <a href="assets.html" class="portal-nav-link" data-page="assets">
+          <span class="portal-nav-icon">🖥️</span> Assets
+        </a>
+        <a href="tickets.html" class="portal-nav-link" data-page="tickets">
+          <span class="portal-nav-icon">🎫</span> Tickets
+        </a>
+        <a href="audit-logs.html" class="portal-nav-link" data-page="audit">
+          <span class="portal-nav-icon">📋</span> Audit Logs
+        </a>
+      </nav>
+
+      <div class="portal-sidebar-footer">
+        <a href="index.html" class="portal-back-link">
+          <span>←</span> Back to Main Website
+        </a>
+      </div>
+    </aside>
+
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="togglePortalSidebar()"></div>
+
+    <!-- MAIN -->
+    <div class="portal-main">
+
+      <!-- HEADER -->
+      <header class="portal-header">
+        <div class="portal-header-left">
+          <button class="portal-menu-toggle" onclick="togglePortalSidebar()" aria-label="Toggle sidebar">☰</button>
+          <div class="portal-welcome" id="portalWelcome">
+            <div class="welcome-text">Welcome, <span id="userName">User</span></div>
+            <div class="role-text">Role: <span id="userRole">—</span> <span class="role-badge" id="roleBadge"></span></div>
+          </div>
+        </div>
+        <div class="portal-header-right">
+          <div id="notifBell"></div>
+          <button class="btn-logout" onclick="portalLogout()">Logout</button>
+        </div>
+      </header>
+
+      <!-- CONTENT -->
+      <main class="portal-content">
+        <div class="portal-page-title">
+          <h1>Dashboard</h1>
+          <p>CS&amp;IT operations overview — Bacheli Regional Office</p>
+        </div>
+
+        <!-- KPI CARDS -->
+        <div class="kpi-grid">
+          <div class="dashboard-kpi">
+            <div class="kpi-icon">🖥️</div>
+            <div class="kpi-value" data-count="248">248</div>
+            <div class="kpi-label">Total Assets</div>
+          </div>
+          <div class="dashboard-kpi">
+            <div class="kpi-icon">📄</div>
+            <div class="kpi-value" data-count="156">156</div>
+            <div class="kpi-label">Uploaded Documents</div>
+          </div>
+          <div class="dashboard-kpi">
+            <div class="kpi-icon">🎫</div>
+            <div class="kpi-value" data-count="23">23</div>
+            <div class="kpi-label">Open Tickets</div>
+          </div>
+          <div class="dashboard-kpi">
+            <div class="kpi-icon">🗄️</div>
+            <div class="kpi-value" data-count="124">124</div>
+            <div class="kpi-label">Active Servers</div>
+          </div>
+          <div class="dashboard-kpi health">
+            <div class="kpi-icon">📡</div>
+            <div class="kpi-value">99.9%</div>
+            <div class="kpi-label">Network Health</div>
+          </div>
+          <div class="dashboard-kpi">
+            <div class="kpi-icon">&#127903;</div>
+            <div class="kpi-value" data-count="15">15</div>
+            <div class="kpi-label">Total Tickets</div>
+          </div>
+          <div class="dashboard-kpi">
+            <div class="kpi-icon">&#128203;</div>
+            <div class="kpi-value" data-count="25">25</div>
+            <div class="kpi-label">Audit Activities Today</div>
+          </div>
+        </div>
+
+        <!-- WIDGETS -->
+        <div class="widget-grid">
+
+          <!-- Recent Activity -->
+          <div class="widget-card">
+            <div class="widget-header">
+              <h3>Recent Activity</h3>
+            </div>
+            <div class="widget-body">
+              <div class="widget-item">
+                <div class="widget-item-icon">🖥️</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">Asset Updated</div>
+                  <div class="widget-item-desc">NMDC-BC-AST-1042 — Dell PowerEdge R750 reassigned to Server Team</div>
+                </div>
+                <span class="widget-item-time">12 min ago</span>
+              </div>
+              <div class="widget-item">
+                <div class="widget-item-icon">📄</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">Document Uploaded</div>
+                  <div class="widget-item-desc">Network Topology Map v4.2 — Bacheli DC uploaded by Network Team</div>
+                </div>
+                <span class="widget-item-time">45 min ago</span>
+              </div>
+              <div class="widget-item">
+                <div class="widget-item-icon">🎫</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">Ticket Created</div>
+                  <div class="widget-item-desc">TKT-2026-091 — ERP module access request from Finance Dept.</div>
+                </div>
+                <span class="widget-item-time">1 hr ago</span>
+              </div>
+              <div class="widget-item">
+                <div class="widget-item-icon">🖥️</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">Asset Updated</div>
+                  <div class="widget-item-desc">NMDC-BC-AST-0891 — Cisco Catalyst switch firmware upgraded to 17.9</div>
+                </div>
+                <span class="widget-item-time">2 hrs ago</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- System Status -->
+          <div class="widget-card">
+            <div class="widget-header">
+              <h3>System Status</h3>
+              <span class="status-indicator"><span class="dot"></span> All Systems Operational</span>
+            </div>
+            <div class="widget-body">
+              <div class="widget-item">
+                <div class="widget-item-icon success">🌐</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">Network Online</div>
+                  <div class="widget-item-desc">Core fiber ring — 850 km, 99.9% uptime last 30 days</div>
+                </div>
+                <span class="status-indicator"><span class="dot"></span></span>
+              </div>
+              <div class="widget-item">
+                <div class="widget-item-icon success">🏢</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">Data Center Healthy</div>
+                  <div class="widget-item-desc">Bacheli DC — Temperature 22°C, Power load 68%, No alerts</div>
+                </div>
+                <span class="status-indicator"><span class="dot"></span></span>
+              </div>
+              <div class="widget-item">
+                <div class="widget-item-icon success">🗄️</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">Server Cluster Active</div>
+                  <div class="widget-item-desc">124 servers online — 0 critical, 2 warning (disk capacity)</div>
+                </div>
+                <span class="status-indicator"><span class="dot"></span></span>
+              </div>
+              <div class="widget-item">
+                <div class="widget-item-icon success">📊</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">ERP Systems Live</div>
+                  <div class="widget-item-desc">SAP S/4HANA — All modules operational, last sync 3 min ago</div>
+                </div>
+                <span class="status-indicator"><span class="dot"></span></span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Upcoming Alerts -->
+          <div class="widget-card">
+            <div class="widget-header">
+              <h3>Upcoming Alerts</h3>
+              <span class="status-indicator"><span class="dot warning"></span> 3 Pending</span>
+            </div>
+            <div class="widget-body">
+              <div class="widget-item">
+                <div class="widget-item-icon alert">⚠️</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">Warranty Expiring</div>
+                  <div class="widget-item-desc">3 assets warranty expires by June 30 — UPS units at Bacheli DC</div>
+                </div>
+                <span class="widget-item-time">Jun 30</span>
+              </div>
+              <div class="widget-item">
+                <div class="widget-item-icon alert">🔧</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">Maintenance Scheduled</div>
+                  <div class="widget-item-desc">Core switch maintenance — Bacheli Network Room, June 8, 02:00–06:00 IST</div>
+                </div>
+                <span class="widget-item-time">Jun 8</span>
+              </div>
+              <div class="widget-item">
+                <div class="widget-item-icon alert">🚨</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">Critical Ticket Open</div>
+                  <div class="widget-item-desc">TKT-2026-089 — Server rack overheating at Kirandul Mine DC</div>
+                </div>
+                <span class="widget-item-time">Open</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-card">
+            <div class="widget-header">
+              <h3>Recent Tickets</h3>
+              <a href="tickets.html" class="widget-item-time">View All</a>
+            </div>
+            <div class="widget-body">
+              <div class="widget-item">
+                <div class="widget-item-icon">&#127903;</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">TKT-2026-101 - ERP Access Request</div>
+                  <div class="widget-item-desc">Medium priority - Assigned to ERP Team</div>
+                </div>
+                <span class="widget-item-time">Assigned</span>
+              </div>
+              <div class="widget-item">
+                <div class="widget-item-icon alert">&#127903;</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">TKT-2026-100 - Server Rack Alert</div>
+                  <div class="widget-item-desc">Critical priority - Server Team investigating</div>
+                </div>
+                <span class="widget-item-time">In Progress</span>
+              </div>
+              <div class="widget-item">
+                <div class="widget-item-icon">&#127903;</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">TKT-2026-099 - Printer Offline</div>
+                  <div class="widget-item-desc">High priority - Bacheli Regional Office</div>
+                </div>
+                <span class="widget-item-time">Open</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="widget-card">
+            <div class="widget-header">
+              <h3>Recent Audit Activity</h3>
+              <a href="audit-logs.html" class="widget-item-time">View All</a>
+            </div>
+            <div class="widget-body">
+              <div class="widget-item">
+                <div class="widget-item-icon">&#128203;</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">Ticket Created</div>
+                  <div class="widget-item-desc">Smt. Priya Sharma created TKT-2026-101</div>
+                </div>
+                <span class="widget-item-time">9:42 AM</span>
+              </div>
+              <div class="widget-item">
+                <div class="widget-item-icon success">&#128203;</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">User Login</div>
+                  <div class="widget-item-desc">Shri R.K. Verma signed in successfully</div>
+                </div>
+                <span class="widget-item-time">9:31 AM</span>
+              </div>
+              <div class="widget-item">
+                <div class="widget-item-icon">&#128203;</div>
+                <div class="widget-item-text">
+                  <div class="widget-item-title">Asset Updated</div>
+                  <div class="widget-item-desc">Firmware record updated for NET-001</div>
+                </div>
+                <span class="widget-item-time">8:56 AM</span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="shared.js"></script>
+  <script>
+    initPortalPage('dashboard');
+  </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NMDC Digital Initiatives — ERP systems, CCTV monitoring, fiber network, data centers, smart mining, and OITDS truck dispatch.">
+  <title>Digital Initiatives — NMDC Limited, Bacheli Complex</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ACCESSIBILITY BAR -->
+  <div class="a11y-bar" id="a11yBar">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-3">
+        <span class="opacity-70 text-xs uppercase tracking-widest mr-2">Accessibility</span>
+        <button id="btnEn" class="active" onclick="setLang('en')">English</button>
+        <button id="btnHi" onclick="setLang('hi')">हिन्दी</button>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="opacity-70 text-xs uppercase tracking-widest mr-1">Text</span>
+        <button onclick="resizeText(-1)">A−</button>
+        <button onclick="resizeText(0)">A</button>
+        <button onclick="resizeText(1)">A+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee-track py-2">
+    <div class="marquee-content">
+      ◆ EXTENSION: Tender NIT-MIN-2026-089 deadline extended to June 15. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ NOTICE: Bidders are requested to update their structural KYC credentials on the CPPP portal immediately. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ EXTENSION: Tender NIT-MIN-2026-089 deadline extended to June 15. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ NOTICE: Bidders are requested to update their structural KYC credentials on the CPPP portal immediately.
+    </div>
+  </div>
+
+  <!-- STICKY NAVBAR -->
+  <nav class="main-nav" id="mainNav">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="logomark">NMDC</div>
+        <div>
+          <div class="text-white font-extrabold text-lg leading-tight" data-i18n="brandName">NMDC Limited</div>
+          <div class="text-gray-400 text-xs font-medium tracking-wider">A Govt. of India Enterprise</div>
+        </div>
+      </a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <div class="nav-links flex items-center gap-1" id="navLinks">
+        <a href="index.html" class="nav-link" data-i18n="navHome">Home</a>
+        <a href="about.html" class="nav-link" data-i18n="navAbout">About Us</a>
+        <a href="business.html" class="nav-link" data-i18n="navBusiness">Our Business</a>
+        <a href="csit.html" class="nav-link" data-i18n="navCSIT">CS&amp;IT Department</a>
+        <a href="digital-initiatives.html" class="nav-link active" data-i18n="navDigital">Digital Initiatives</a>
+        <a href="tenders.html" class="nav-link" data-i18n="navProcurement">Procurement</a>
+        <a href="governance.html" class="nav-link" data-i18n="navGovernance">Governance &amp; Contact</a>
+        <a href="portal-login.html" class="nav-link" data-i18n="navPortal">CS&amp;IT Portal</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="max-w-7xl mx-auto px-4 pt-12 pb-6">
+      <div class="accent-bar mb-4"></div>
+      <h1 class="text-4xl font-black text-gray-900 mb-2" data-i18n="digitalTitle">Digital Initiatives</h1>
+      <p class="text-gray-500 text-lg max-w-3xl" data-i18n="digitalSubtitle">Transforming Bacheli Complex mining operations through enterprise technology — from integrated SAP ERP and real-time surveillance to fiber connectivity and OITDS truck dispatch systems.</p>
+    </section>
+
+    <!-- SUMMARY METRICS -->
+    <section class="max-w-7xl mx-auto px-4 mb-12">
+      <div class="metric-ribbon">
+        <div class="flex flex-wrap">
+          <div class="metric-item">
+            <div class="metric-icon">✅</div>
+            <div class="metric-value">4</div>
+            <div class="metric-label">Live Systems</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-icon">🔄</div>
+            <div class="metric-value">2</div>
+            <div class="metric-label">In Progress</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-icon">📡</div>
+            <div class="metric-value">850+ km</div>
+            <div class="metric-label">Fiber Network</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-icon">🏢</div>
+            <div class="metric-value">2</div>
+            <div class="metric-label">Data Centers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- INITIATIVE CARDS -->
+    <section class="max-w-7xl mx-auto px-4 mb-20">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+        <div class="initiative-card">
+          <div class="initiative-icon">📊</div>
+          <span class="initiative-status live"><span class="status-dot"></span> Live</span>
+          <h3 class="text-xl font-bold mb-2">ERP Systems</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">SAP S/4HANA implementation covering Finance, Materials Management, HR, and Plant Maintenance at Bacheli Complex. Integrated with weighbridge systems, automated sampling, and production reporting.</p>
+          <div class="text-xs text-gray-400">Deployed: 2019 &nbsp;|&nbsp; Users: 8,500+</div>
+        </div>
+
+        <div class="initiative-card">
+          <div class="initiative-icon">📹</div>
+          <span class="initiative-status live"><span class="status-dot"></span> Live</span>
+          <h3 class="text-xl font-bold mb-2">CCTV Monitoring</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">High-definition IP-based surveillance across Deposit-5, Deposit-10/11A, crushing plants, loading silos, and township perimeters. 250+ cameras monitored locally at Bacheli and synced with corporate security nodes.</p>
+          <div class="text-xs text-gray-400">Cameras: 1,200+ &nbsp;|&nbsp; Sites: 15</div>
+        </div>
+
+        <div class="initiative-card">
+          <div class="initiative-icon">🔗</div>
+          <span class="initiative-status progress"><span class="status-dot"></span> In Progress</span>
+          <h3 class="text-xl font-bold mb-2">Fiber Network</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">High-speed optical fiber backbone connecting Bacheli administrative office, mine head, crushing plants, and railway siding. Redundant link established to neighboring Kirandul Complex for high-availability communication.</p>
+          <div class="text-xs text-gray-400">Coverage: 850 km &nbsp;|&nbsp; Completion: Q4 2026</div>
+        </div>
+
+        <div class="initiative-card">
+          <div class="initiative-icon">🏢</div>
+          <span class="initiative-status live"><span class="status-dot"></span> Live</span>
+          <h3 class="text-xl font-bold mb-2">Data Centers</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Primary corporate data center hosted at Hyderabad HQ with a dedicated Disaster Recovery (DR) site at Kirandul Complex. Local server rooms at Bacheli handle edge computing, CCTV archival, and offline weighbridge buffering.</p>
+          <div class="text-xs text-gray-400">Uptime: 99.95% &nbsp;|&nbsp; RPO: &lt; 4 hrs</div>
+        </div>
+
+        <div class="initiative-card">
+          <div class="initiative-icon">⛏️</div>
+          <span class="initiative-status progress"><span class="status-dot"></span> In Progress</span>
+          <h3 class="text-xl font-bold mb-2">Smart Mining Technologies</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">IoT sensor networks, GPS fleet tracking, drone-based volumetric stockpile surveys, and real-time excavation monitoring deployed at Bailadila Deposit-5 and Deposit-10/11A mine pits.</p>
+          <div class="text-xs text-gray-400">Pilot Sites: 2 &nbsp;|&nbsp; Rollout: 2027</div>
+        </div>
+
+        <div class="initiative-card">
+          <div class="initiative-icon">🚛</div>
+          <span class="initiative-status live"><span class="status-dot"></span> Live</span>
+          <h3 class="text-xl font-bold mb-2">OITDS Truck Dispatch System</h3>
+          <p class="text-gray-500 text-sm leading-relaxed mb-4">Online Integrated Truck Dispatch System (OITDS) for automated weighbridge integration, Dumper queue optimization, and real-time iron ore movement tracking from Bailadila pit to Bacheli loading plants.</p>
+          <div class="text-xs text-gray-400">Daily Trips: 2,000+ &nbsp;|&nbsp; Loading Points: 8</div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- MEGA FOOTER -->
+  <footer class="main-footer">
+    <div class="max-w-7xl mx-auto px-4 py-14">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="business.html">Mineral Portfolio</a>
+          <a href="csit.html">CS&amp;IT Department</a>
+          <a href="digital-initiatives.html">Digital Initiatives</a>
+          <a href="tenders.html">E-Procurement</a>
+          <a href="governance.html">RTI &amp; Governance</a>
+          <a href="portal-login.html">CS&amp;IT Portal</a>
+          <a href="#">Careers</a>
+          <a href="#">Investor Relations</a>
+        </div>
+        <div>
+          <h4>Statutory Compliance</h4>
+          <a href="#">Mines Act, 1952 Compliance</a>
+          <a href="#">MMDR Act Adherence</a>
+          <a href="#">Environmental Clearances</a>
+          <a href="#">SEBI LODR Filings</a>
+          <a href="#">Vigilance &amp; Anti-Corruption</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p class="text-sm leading-relaxed mb-2">NMDC Corporate HQ<br>Khanij Bhavan, Masab Tank<br>Hyderabad, Telangana – 500028</p>
+          <a href="tel:07857230356">☎ 07857-230356</a>
+          <a href="mailto:it.bacheli@nmdc.co.in">✉ it.bacheli@nmdc.co.in</a>
+        </div>
+        <div>
+          <h4>Affiliations</h4>
+          <div class="footer-badge mb-3"><div class="text-amber-400 font-bold text-sm mb-1">Ministry of Steel</div><div class="text-xs">Government of India</div></div>
+          <div class="footer-badge"><div class="text-amber-400 font-bold text-sm mb-1">ISO 9001:2015</div><div class="text-xs">Quality Management Certified</div></div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-10 pt-6 text-center text-xs text-gray-500">
+        <p>© 2026 NMDC Limited. All Rights Reserved. | A Government of India Enterprise under the Ministry of Steel.</p>
+        <p class="mt-2 text-gray-400">Bacheli Complex, Dantewada, Chhattisgarh — This is an independent academic project and is not affiliated with or endorsed by NMDC Limited.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="shared.js"></script>
+  <script>
+    const pageTranslations = {
+      en: { brandName:'NMDC Limited', navHome:'Home', navAbout:'About Us', navBusiness:'Our Business', navCSIT:'CS&IT Department', navDigital:'Digital Initiatives', navProcurement:'Procurement', navGovernance:'Governance & Contact', navPortal:'CS&IT Portal', digitalTitle:'Digital Initiatives', digitalSubtitle:'Transforming Bacheli Complex mining operations through enterprise technology — from integrated SAP ERP and real-time surveillance to fiber connectivity and OITDS truck dispatch systems.' },
+      hi: { brandName:'भारत खनिज लिमिटेड', navHome:'मुखपृष्ठ', navAbout:'हमारे बारे में', navBusiness:'हमारा व्यवसाय', navCSIT:'CS&IT विभाग', navDigital:'डिजिटल पहल', navProcurement:'खरीद', navGovernance:'शासन एवं संपर्क', navPortal:'CS&IT पोर्टल', digitalTitle:'डिजिटल पहल', digitalSubtitle:'एंटरप्राइज तकनीक के माध्यम से BML के खनन संचालन का रूपांतरण।' }
+    };
+  </script>
+</body>
+</html>

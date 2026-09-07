@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NMDC E-Procurement Portal — Live Tender Listings, NIT Downloads, and Bidding Information for NMDC Limited.">
+  <title>Procurement Desk — NMDC Limited, Bacheli Complex</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ACCESSIBILITY BAR -->
+  <div class="a11y-bar" id="a11yBar">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-3">
+        <span class="opacity-70 text-xs uppercase tracking-widest mr-2">Accessibility</span>
+        <button id="btnEn" class="active" onclick="setLang('en')">English</button>
+        <button id="btnHi" onclick="setLang('hi')">हिन्दी</button>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="opacity-70 text-xs uppercase tracking-widest mr-1">Text</span>
+        <button onclick="resizeText(-1)">A−</button>
+        <button onclick="resizeText(0)">A</button>
+        <button onclick="resizeText(1)">A+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee-track py-2">
+    <div class="marquee-content">
+      ◆ EXTENSION: Tender NIT-MIN-2026-089 deadline extended to June 15. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ NOTICE: Bidders are requested to update their structural KYC credentials on the CPPP portal immediately. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ EXTENSION: Tender NIT-MIN-2026-089 deadline extended to June 15. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ NOTICE: Bidders are requested to update their structural KYC credentials on the CPPP portal immediately.
+    </div>
+  </div>
+
+  <!-- STICKY NAVBAR -->
+  <nav class="main-nav" id="mainNav">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="logomark">NMDC</div>
+        <div>
+          <div class="text-white font-extrabold text-lg leading-tight" data-i18n="brandName">NMDC Limited</div>
+          <div class="text-gray-400 text-xs font-medium tracking-wider">A Govt. of India Enterprise</div>
+        </div>
+      </a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <div class="nav-links flex items-center gap-1" id="navLinks">
+        <a href="index.html" class="nav-link" data-i18n="navHome">Home</a>
+        <a href="about.html" class="nav-link" data-i18n="navAbout">About Us</a>
+        <a href="business.html" class="nav-link" data-i18n="navBusiness">Our Business</a>
+        <a href="csit.html" class="nav-link" data-i18n="navCSIT">CS&amp;IT Department</a>
+        <a href="digital-initiatives.html" class="nav-link" data-i18n="navDigital">Digital Initiatives</a>
+        <a href="tenders.html" class="nav-link active" data-i18n="navProcurement">Procurement</a>
+        <a href="governance.html" class="nav-link" data-i18n="navGovernance">Governance &amp; Contact</a>
+        <a href="portal-login.html" class="nav-link" data-i18n="navPortal">CS&amp;IT Portal</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="max-w-7xl mx-auto px-4 pt-12 pb-4">
+      <div class="accent-bar mb-4"></div>
+      <h1 class="text-4xl font-black text-gray-900 mb-2" data-i18n="tenderPageTitle">E-Procurement Desk</h1>
+      <p class="text-gray-500 text-lg max-w-3xl">All tenders are published in compliance with CVC guidelines and GEM/CPPP portal mandates. Bidders must register on the CPPP Portal. For queries, contact Bacheli Tender Cell at <a href="tel:07857230356" class="text-amber-600 font-semibold underline">07857-230356 (Ext. 2045)</a> or <a href="mailto:tender.cell@nmdc.co.in" class="text-amber-600 font-semibold underline">tender.cell@nmdc.co.in</a>.</p>
+    </section>
+
+    <!-- STATUS BADGE -->
+    <section class="max-w-7xl mx-auto px-4 mb-8">
+      <div class="status-badge">
+        <div class="status-pulse"></div>
+        <div>
+          <span class="text-2xl font-black text-gray-900">🔥 14 Active E-Tenders</span>
+          <span class="text-gray-500 text-sm ml-2">Open for Bidding</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER CHIPS -->
+    <section class="max-w-7xl mx-auto px-4 mb-8">
+      <div class="flex flex-wrap gap-3" id="filterBar">
+        <button class="filter-chip active" data-filter="all" onclick="filterTenders('all', this)">All Works</button>
+        <button class="filter-chip" data-filter="civil" onclick="filterTenders('civil', this)">Civil Works</button>
+        <button class="filter-chip" data-filter="equipment" onclick="filterTenders('equipment', this)">Equipment Supply</button>
+        <button class="filter-chip" data-filter="logistics" onclick="filterTenders('logistics', this)">Logistics / Transport</button>
+        <button class="filter-chip" data-filter="it" onclick="filterTenders('it', this)">IT Services</button>
+      </div>
+    </section>
+
+    <!-- TENDER TABLE -->
+    <section class="max-w-7xl mx-auto px-4 mb-20">
+      <div class="overflow-x-auto rounded-xl border border-gray-200 shadow-sm">
+        <table class="tender-table" id="tenderTable">
+          <thead>
+            <tr>
+              <th>Tender Ref ID</th>
+              <th>Scope of Work / Description</th>
+              <th>Category</th>
+              <th>Closing Date</th>
+              <th>Action</th>
+            </tr>
+          </thead>
+          <tbody id="tenderBody">
+            <!-- Rows rendered by JS -->
+          </tbody>
+        </table>
+      </div>
+      <p class="text-gray-400 text-sm mt-4">Showing <span id="rowCount">5</span> of 14 active tenders. For the full listing visit the <a href="#" class="text-amber-600 underline font-semibold">CPPP Portal</a>.</p>
+    </section>
+  </main>
+
+  <!-- MEGA FOOTER -->
+  <footer class="main-footer">
+    <div class="max-w-7xl mx-auto px-4 py-14">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="business.html">Mineral Portfolio</a>
+          <a href="csit.html">CS&amp;IT Department</a>
+          <a href="digital-initiatives.html">Digital Initiatives</a>
+          <a href="tenders.html">E-Procurement</a>
+          <a href="governance.html">RTI &amp; Governance</a>
+          <a href="portal-login.html">CS&amp;IT Portal</a>
+          <a href="#">Careers</a>
+          <a href="#">Investor Relations</a>
+        </div>
+        <div>
+          <h4>Statutory Compliance</h4>
+          <a href="#">Mines Act, 1952 Compliance</a><a href="#">MMDR Act Adherence</a><a href="#">Environmental Clearances</a><a href="#">SEBI LODR Filings</a><a href="#">Vigilance & Anti-Corruption</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p class="text-sm leading-relaxed mb-2">NMDC Corporate HQ<br>Khanij Bhavan, Masab Tank<br>Hyderabad, Telangana – 500028</p>
+          <a href="tel:07857230356">☎ 07857-230356</a><a href="mailto:info@nmdc.co.in">✉ info@nmdc.co.in</a>
+        </div>
+        <div>
+          <h4>Affiliations</h4>
+          <div class="footer-badge mb-3"><div class="text-amber-400 font-bold text-sm mb-1">Ministry of Steel</div><div class="text-xs">Government of India</div></div>
+          <div class="footer-badge"><div class="text-amber-400 font-bold text-sm mb-1">ISO 9001:2015</div><div class="text-xs">Quality Management Certified</div></div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-10 pt-6 text-center text-xs text-gray-500">
+        <p>© 2026 NMDC Limited. All Rights Reserved. | A Government of India Enterprise under the Ministry of Steel.</p>
+        <p class="mt-2 text-gray-400">Bacheli Complex, Dantewada, Chhattisgarh — This is an independent academic project and is not affiliated with or endorsed by NMDC Limited.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // --- Tender Data (JSON-ready for future API integration) ---
+    const tenderData = [
+      {
+        id: 'NIT-MIN-2026-089',
+        description: 'Supply and installation of conveyor belt system components at Bailadila Deposit-5, Bacheli Complex, Dantewada (Chhattisgarh).',
+        category: 'civil',
+        closing: '15 Jun 2026',
+        status: 'open'
+      },
+      {
+        id: 'NIT-EQ-2026-042',
+        description: 'Supply, Installation & Commissioning of 2 Nos. Heavy Duty Hydraulic Mining Shovels (10 cu.m class) with 3-year AMC for Kirandul Complex, Dantewada (Chhattisgarh).',
+        category: 'equipment',
+        closing: '22 Jun 2026',
+        status: 'open'
+      },
+      {
+        id: 'NIT-LOG-2026-017',
+        description: 'Annual Rate Contract for Transportation of Iron Ore Lump & Fines (approx. 2.5 MT) from Donimalai Mine screening plant to Ranjitpura Railway Siding, Karnataka.',
+        category: 'logistics',
+        closing: '30 Jun 2026',
+        status: 'open'
+      },
+      {
+        id: 'NIT-IT-2026-005',
+        description: 'Development and Deployment of ERP-Integrated Mine Production Dashboard with IoT Sensor Integration for Bacheli Complex CS&IT Regional Office — 18-month engagement with SLA support.',
+        category: 'it',
+        closing: '10 Jul 2026',
+        status: 'open'
+      },
+      {
+        id: 'NIT-CIV-2026-113',
+        description: 'Design and Construction of 120-Bed Residential Township Quarters for Mining Staff at Bacheli Complex, Dantewada (Chhattisgarh) — Phase II civil package.',
+        category: 'civil',
+        closing: '18 Jul 2026',
+        status: 'open'
+      }
+    ];
+
+    // --- Render Table ---
+    function renderTenders(filter) {
+      const tbody = document.getElementById('tenderBody');
+      const filtered = filter === 'all' ? tenderData : tenderData.filter(t => t.category === filter);
+      tbody.innerHTML = '';
+      filtered.forEach(tender => {
+        const row = document.createElement('tr');
+        row.setAttribute('data-category', tender.category);
+        row.innerHTML = `
+          <td class="font-bold text-sm whitespace-nowrap" style="color: var(--accent-copper);">${tender.id}</td>
+          <td class="text-sm leading-relaxed">${tender.description}</td>
+          <td class="text-xs font-semibold uppercase tracking-wider text-gray-400 whitespace-nowrap">${tender.category}</td>
+          <td class="font-semibold text-sm whitespace-nowrap">${tender.closing}</td>
+          <td><button class="btn-download" onclick="alert('NIT PDF download initiated for ${tender.id}')">Download NIT PDF</button></td>
+        `;
+        tbody.appendChild(row);
+      });
+      document.getElementById('rowCount').textContent = filtered.length;
+    }
+
+    // --- Filter Logic ---
+    function filterTenders(category, btn) {
+      document.querySelectorAll('.filter-chip').forEach(c => c.classList.remove('active'));
+      btn.classList.add('active');
+      renderTenders(category);
+    }
+
+    // Initial render
+    renderTenders('all');
+
+    // --- i18n ---
+    const translations = {
+      en: { brandName:'NMDC Limited', navHome:'Home', navAbout:'About Us', navBusiness:'Our Business', navCSIT:'CS&IT Department', navDigital:'Digital Initiatives', navProcurement:'Procurement', navGovernance:'Governance & Contact', navPortal:'CS&IT Portal', tenderPageTitle:'E-Procurement Desk' },
+      hi: { brandName:'भारत खनिज लिमिटेड', navHome:'मुखपृष्ठ', navAbout:'हमारे बारे में', navBusiness:'हमारा व्यवसाय', navCSIT:'CS&IT विभाग', navDigital:'डिजिटल पहल', navProcurement:'खरीद', navGovernance:'शासन एवं संपर्क', navPortal:'CS&IT पोर्टल', tenderPageTitle:'ई-खरीद डेस्क' }
+    };
+    let currentLang = 'en';
+    function setLang(lang) {
+      currentLang = lang;
+      document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+      document.getElementById('btnHi').classList.toggle('active', lang === 'hi');
+      document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.getAttribute('data-i18n'); if (translations[lang][k]) el.textContent = translations[lang][k]; });
+    }
+    let fontStep = 0;
+    function resizeText(dir) { if (dir === 0) fontStep = 0; else fontStep = Math.max(-3, Math.min(3, fontStep + dir)); document.documentElement.style.fontSize = (17 + fontStep * 2) + 'px'; }
+    function toggleMobileMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+    window.addEventListener('scroll', () => { document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20); });
+  </script>
+</body>
+</html>

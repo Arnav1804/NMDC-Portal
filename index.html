@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NMDC Limited — India's leading Public Sector Undertaking in mining operations. Sustaining National Growth, Safely and Responsibly.">
+  <title>Home — NMDC Limited, Bacheli Complex</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ============ ACCESSIBILITY BAR ============ -->
+  <div class="a11y-bar" id="a11yBar">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-3">
+        <span class="opacity-70 text-xs uppercase tracking-widest mr-2">Accessibility</span>
+        <button id="btnEn" class="active" onclick="setLang('en')" aria-label="Switch to English">English</button>
+        <button id="btnHi" onclick="setLang('hi')" aria-label="Switch to Hindi">हिन्दी</button>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="opacity-70 text-xs uppercase tracking-widest mr-1">Text</span>
+        <button onclick="resizeText(-1)" aria-label="Decrease text size">A−</button>
+        <button onclick="resizeText(0)" aria-label="Reset text size">A</button>
+        <button onclick="resizeText(1)" aria-label="Increase text size">A+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============ MARQUEE ============ -->
+  <div class="marquee-track py-2">
+    <div class="marquee-content" id="marqueeContent">
+      ◆ EXTENSION: Tender NIT-MIN-2026-089 deadline extended to June 15. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ NOTICE: Bidders are requested to update their structural KYC credentials on the CPPP portal immediately. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ EXTENSION: Tender NIT-MIN-2026-089 deadline extended to June 15. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ NOTICE: Bidders are requested to update their structural KYC credentials on the CPPP portal immediately.
+    </div>
+  </div>
+
+  <!-- ============ STICKY NAVBAR ============ -->
+  <nav class="main-nav" id="mainNav">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="logomark">NMDC</div>
+        <div>
+          <div class="text-white font-extrabold text-lg leading-tight" data-i18n="brandName">NMDC Limited</div>
+          <div class="text-gray-400 text-xs font-medium tracking-wider">A Govt. of India Enterprise</div>
+        </div>
+      </a>
+      <button class="hamburger" id="hamburgerBtn" onclick="toggleMobileMenu()" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-links flex items-center gap-1" id="navLinks">
+        <a href="index.html" class="nav-link active" data-i18n="navHome">Home</a>
+        <a href="about.html" class="nav-link" data-i18n="navAbout">About Us</a>
+        <a href="business.html" class="nav-link" data-i18n="navBusiness">Our Business</a>
+        <a href="csit.html" class="nav-link" data-i18n="navCSIT">CS&amp;IT Department</a>
+        <a href="digital-initiatives.html" class="nav-link" data-i18n="navDigital">Digital Initiatives</a>
+        <a href="tenders.html" class="nav-link" data-i18n="navProcurement">Procurement</a>
+        <a href="governance.html" class="nav-link" data-i18n="navGovernance">Governance &amp; Contact</a>
+        <a href="portal-login.html" class="nav-link" data-i18n="navPortal">CS&amp;IT Portal</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- ============ HERO ============ -->
+    <section class="max-w-7xl mx-auto px-4 pt-8 pb-4">
+      <div class="hero-frame">
+        <img src="hero-banner.png" alt="NMDC Mining Operations — Open Pit Iron Ore Mine" loading="eager">
+        <div class="hero-overlay flex flex-col justify-center min-h-[400px]">
+          <span class="inline-block text-amber-400 text-sm font-bold uppercase tracking-widest mb-4">Public Sector Undertaking — Ministry of Steel</span>
+          <h1 class="text-4xl md:text-5xl font-black text-white leading-tight mb-4" data-i18n="heroTitle">Powering National Growth</h1>
+          <p class="text-gray-300 text-lg leading-relaxed mb-8" data-i18n="heroTagline">Sustaining National Growth, Safely and Responsibly.</p>
+          <div class="flex flex-wrap gap-3">
+            <a href="business.html" class="btn-primary">Explore Our Operations →</a>
+            <a href="tenders.html" class="btn-primary" style="background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2);">View Live Tenders</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ DARPAN METRIC RIBBON ============ -->
+    <section class="max-w-7xl mx-auto px-4 -mt-6 relative z-10 mb-12">
+      <div class="metric-ribbon">
+        <div class="flex flex-wrap">
+          <div class="metric-item">
+            <div class="metric-icon">⛏️</div>
+            <div class="metric-value">12</div>
+            <div class="metric-label" data-i18n="metricMines">Active Mine Sites</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-icon">💰</div>
+            <div class="metric-value">₹4,500+ Cr</div>
+            <div class="metric-label" data-i18n="metricTurnover">Annual Turnover</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-icon">👷</div>
+            <div class="metric-value">8,500+</div>
+            <div class="metric-label" data-i18n="metricWorkforce">Employees Nationwide</div>
+          </div>
+          <div class="metric-item">
+            <div class="metric-icon">🌿</div>
+            <div class="metric-value">2,400 Ha</div>
+            <div class="metric-label" data-i18n="metricLand">Eco-Restored Land</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ VISION 2030 & AWARDS ============ -->
+    <section class="max-w-7xl mx-auto px-4 mb-16">
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Vision Block -->
+        <div class="vision-block p-10">
+          <span class="inline-block text-amber-400 text-xs font-bold uppercase tracking-widest mb-3">Strategic Roadmap</span>
+          <h2 class="text-3xl font-black mb-4 leading-snug" data-i18n="visionTitle">Envisioning 100 MT Mining Capacity by 2030</h2>
+          <p class="text-gray-300 leading-relaxed mb-6">NMDC Limited is charting a path to triple its extraction capacity through sustainable mine expansion, advanced mechanization, and responsible stewardship of India's mineral wealth.</p>
+          <div class="flex items-center gap-3 text-amber-400 font-bold text-sm">
+            <span class="w-2 h-2 bg-amber-400 rounded-full"></span>
+            Government of India — Make in India Initiative
+          </div>
+        </div>
+        <!-- Awards Grid -->
+        <div>
+          <span class="inline-block text-amber-500 text-xs font-bold uppercase tracking-widest mb-3">Recognitions &amp; Accolades</span>
+          <h2 class="section-heading mb-6" data-i18n="awardsTitle">National Awards</h2>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="award-card">
+              <div class="award-icon">⭐</div>
+              <h3 class="font-bold text-sm mb-1">IBM 5-Star Rating</h3>
+              <p class="text-xs text-gray-500">Sustainable Mining Practices, 2025</p>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">🏆</div>
+              <h3 class="font-bold text-sm mb-1">Greentech Gold Award</h3>
+              <p class="text-xs text-gray-500">Environmental Excellence, 2024</p>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">🛡️</div>
+              <h3 class="font-bold text-sm mb-1">DGMS Safety Shield</h3>
+              <p class="text-xs text-gray-500">Zero Fatality Mines, 2024-25</p>
+            </div>
+            <div class="award-card">
+              <div class="award-icon">📊</div>
+              <h3 class="font-bold text-sm mb-1">MOU Excellent Rating</h3>
+              <p class="text-xs text-gray-500">DPE Performance Score, 2024</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GATEWAY GRID ============ -->
+    <section class="max-w-7xl mx-auto px-4 mb-20">
+      <div class="text-center mb-10">
+        <div class="accent-bar mx-auto mb-4"></div>
+        <h2 class="section-heading" data-i18n="gatewayTitle">Quick Access</h2>
+        <p class="section-subheading mx-auto mt-2">Navigate to key sections of the NMDC corporate portal</p>
+      </div>
+      <div class="grid md:grid-cols-3 gap-6">
+        <a href="business.html" class="gateway-card group" id="gatewayBusiness">
+          <div class="text-5xl mb-5">🪨</div>
+          <h3 class="text-xl font-bold mb-2 group-hover:text-amber-600 transition-colors" data-i18n="gatewayMinerals">Explore Mineral Portfolio</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Iron Ore, Bauxite, Coal — complete chemical specs, logistics, and extraction metrics.</p>
+          <span class="inline-block mt-4 text-amber-600 font-bold text-sm">View Details →</span>
+        </a>
+        <a href="tenders.html" class="gateway-card group" id="gatewayTenders">
+          <div class="text-5xl mb-5">📋</div>
+          <h3 class="text-xl font-bold mb-2 group-hover:text-amber-600 transition-colors" data-i18n="gatewayTenders">View Live Tenders</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">14 active e-tenders across Civil, Equipment, IT, and Logistics categories.</p>
+          <span class="inline-block mt-4 text-amber-600 font-bold text-sm">Open Procurement →</span>
+        </a>
+        <a href="governance.html" class="gateway-card group" id="gatewayGovernance">
+          <div class="text-5xl mb-5">🏛️</div>
+          <h3 class="text-xl font-bold mb-2 group-hover:text-amber-600 transition-colors" data-i18n="gatewayGovernance">Review Governance &amp; RTI</h3>
+          <p class="text-gray-500 text-sm leading-relaxed">Annual reports, SEBI filings, RTI access, CSR disclosures, and departmental contacts.</p>
+          <span class="inline-block mt-4 text-amber-600 font-bold text-sm">Access Records →</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============ MEGA FOOTER ============ -->
+  <footer class="main-footer">
+    <div class="max-w-7xl mx-auto px-4 py-14">
+      <div class="grid md:grid-cols-4 gap-10">
+        <!-- Col 1: Quick Links -->
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="business.html">Mineral Portfolio</a>
+          <a href="csit.html">CS&amp;IT Department</a>
+          <a href="digital-initiatives.html">Digital Initiatives</a>
+          <a href="tenders.html">E-Procurement</a>
+          <a href="governance.html">RTI &amp; Governance</a>
+          <a href="portal-login.html">CS&amp;IT Portal</a>
+          <a href="#">Careers</a>
+          <a href="#">Investor Relations</a>
+        </div>
+        <!-- Col 2: Statutory -->
+        <div>
+          <h4>Statutory Compliance</h4>
+          <a href="#">Mines Act, 1952 Compliance</a>
+          <a href="#">MMDR Act Adherence</a>
+          <a href="#">Environmental Clearances</a>
+          <a href="#">SEBI LODR Filings</a>
+          <a href="#">Vigilance & Anti-Corruption</a>
+        </div>
+        <!-- Col 3: Contact -->
+        <div>
+          <h4>Contact</h4>
+          <p class="text-sm leading-relaxed mb-2">NMDC Corporate HQ<br>Khanij Bhavan, Masab Tank<br>Hyderabad, Telangana – 500028</p>
+          <a href="tel:07857230356">☎ 07857-230356</a>
+          <a href="mailto:info@nmdc.co.in">✉ info@nmdc.co.in</a>
+        </div>
+        <!-- Col 4: Affiliations -->
+        <div>
+          <h4>Affiliations</h4>
+          <div class="footer-badge mb-3">
+            <div class="text-amber-400 font-bold text-sm mb-1">Ministry of Steel</div>
+            <div class="text-xs">Government of India</div>
+          </div>
+          <div class="footer-badge">
+            <div class="text-amber-400 font-bold text-sm mb-1">ISO 9001:2015</div>
+            <div class="text-xs">Quality Management Certified</div>
+          </div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-10 pt-6 text-center text-xs text-gray-500">
+        <p>© 2026 NMDC Limited. All Rights Reserved. | A Government of India Enterprise under the Ministry of Steel.</p>
+        <p class="mt-2 text-gray-400">Bacheli Complex, Dantewada, Chhattisgarh — This is an independent academic project and is not affiliated with or endorsed by NMDC Limited.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ SHARED JAVASCRIPT ============ -->
+  <script>
+    // --- Language Toggle (i18n) ---
+    const translations = {
+      en: {
+        brandName: 'NMDC Limited',
+        navHome: 'Home', navAbout: 'About Us', navBusiness: 'Our Business', navCSIT: 'CS&IT Department', navDigital: 'Digital Initiatives', navProcurement: 'Procurement', navGovernance: 'Governance & Contact', navPortal: 'CS&IT Portal',
+        heroTitle: 'Powering National Growth', heroTagline: 'Sustaining National Growth, Safely and Responsibly.',
+        metricMines: 'Active Mine Sites', metricTurnover: 'Annual Turnover', metricWorkforce: 'Employees Nationwide', metricLand: 'Eco-Restored Land',
+        visionTitle: 'Envisioning 100 MT Mining Capacity by 2030', awardsTitle: 'National Awards',
+        gatewayTitle: 'Quick Access', gatewayMinerals: 'Explore Mineral Portfolio', gatewayTenders: 'View Live Tenders', gatewayGovernance: 'Review Governance & RTI'
+      },
+      hi: {
+        brandName: 'भारत खनिज लिमिटेड',
+        navHome: 'मुखपृष्ठ', navAbout: 'हमारे बारे में', navBusiness: 'हमारा व्यवसाय', navCSIT: 'CS&IT विभाग', navDigital: 'डिजिटल पहल', navProcurement: 'खरीद', navGovernance: 'शासन एवं संपर्क', navPortal: 'CS&IT पोर्टल',
+        heroTitle: 'राष्ट्रीय विकास को शक्ति', heroTagline: 'राष्ट्रीय विकास को सुरक्षित और जिम्मेदारी से बनाए रखना।',
+        metricMines: 'सक्रिय खदान स्थल', metricTurnover: 'वार्षिक कारोबार', metricWorkforce: 'कर्मचारी देशभर में', metricLand: 'पारिस्थितिक पुनर्स्थापित भूमि',
+        visionTitle: '2030 तक 100 MT खनन क्षमता की परिकल्पना', awardsTitle: 'राष्ट्रीय पुरस्कार',
+        gatewayTitle: 'त्वरित पहुँच', gatewayMinerals: 'खनिज पोर्टफोलियो देखें', gatewayTenders: 'लाइव निविदाएँ देखें', gatewayGovernance: 'शासन एवं RTI समीक्षा'
+      }
+    };
+    let currentLang = 'en';
+    function setLang(lang) {
+      currentLang = lang;
+      document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+      document.getElementById('btnHi').classList.toggle('active', lang === 'hi');
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[lang][key]) el.textContent = translations[lang][key];
+      });
+    }
+
+    // --- Text Resize ---
+    let fontStep = 0;
+    function resizeText(dir) {
+      if (dir === 0) { fontStep = 0; }
+      else { fontStep = Math.max(-3, Math.min(3, fontStep + dir)); }
+      document.documentElement.style.fontSize = (17 + fontStep * 2) + 'px';
+    }
+
+    // --- Mobile Menu ---
+    function toggleMobileMenu() {
+      document.getElementById('navLinks').classList.toggle('open');
+    }
+
+    // --- Scroll Shadow ---
+    window.addEventListener('scroll', () => {
+      document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
+</body>
+</html>

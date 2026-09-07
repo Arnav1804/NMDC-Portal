@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NMDC CS&IT Portal — Secure login for authorized personnel.">
+  <title>CS&amp;IT Portal Login — NMDC Limited, Bacheli Complex</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="portal.css">
+</head>
+<body class="login-page">
+
+  <!-- TOP BAR -->
+  <div class="login-topbar">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="logomark" title="NMDC Limited, Bacheli Complex">NC</div>
+        <div>
+          <div class="text-white font-extrabold text-base leading-tight">NMDC Limited</div>
+          <div class="text-gray-400 text-xs">CS&amp;IT Internal Portal</div>
+        </div>
+      </a>
+      <a href="index.html" class="login-back-link">← Back to Main Website</a>
+    </div>
+  </div>
+
+  <!-- LOGIN CARD -->
+  <div class="login-wrapper">
+    <div class="login-card">
+      <div class="text-center mb-6">
+        <div class="logomark" title="NMDC Limited, Bacheli Complex">NC</div>
+        <span class="login-badge">Internal Access</span>
+        <h1 class="text-xl font-black text-gray-900 mb-1">CS&amp;IT Portal Login</h1>
+        <p class="text-gray-500 text-sm">Bacheli Regional Office — Computer Systems &amp; IT</p>
+      </div>
+
+      <div class="login-security">
+        <p class="secure-label">🔒 Secure Internal Bacheli CS&amp;IT Environment</p>
+        <p>Authorized Personnel Only. All access attempts are logged and monitored. Unauthorized use is prohibited under IT Act, 2000 and NMDC Vigilance Policy.</p>
+      </div>
+
+      <div class="form-success" id="loginSuccess">✅ Authentication successful. Redirecting to dashboard…</div>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="empId">Employee ID</label>
+          <input type="text" id="empId" name="empId" class="form-input" placeholder="e.g. NMDC-BC-ADM-001" autocomplete="username">
+          <div class="form-error" id="empIdError">Employee ID is required.</div>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" autocomplete="current-password">
+          <div class="form-error" id="passwordError">Password is required.</div>
+        </div>
+
+        <div class="form-error" id="authError">Invalid Employee ID or Password. Please try again.</div>
+
+        <div class="login-actions">
+          <button type="submit" class="btn-primary btn-login" id="loginBtn">Login</button>
+          <button type="button" class="btn-reset" id="resetBtn">Reset</button>
+        </div>
+      </form>
+
+      <p class="login-footer-note">
+        For access issues, contact CS&amp;IT Helpdesk at <a href="mailto:helpdesk.bacheli@nmdc.co.in" style="color: var(--accent-copper);">helpdesk.bacheli@nmdc.co.in</a> or Ext. 5104
+      </p>
+      <p class="text-xs text-center text-gray-500 mt-4">Bacheli Complex, Dantewada, Chhattisgarh — This is an independent academic project and is not affiliated with or endorsed by NMDC Limited.</p>
+    </div>
+  </div>
+
+  <script src="shared.js"></script>
+  <script>
+    // Redirect if already authenticated
+    if (getSession()) {
+      window.location.href = 'portal.html';
+    }
+
+    const form = document.getElementById('loginForm');
+    const empIdInput = document.getElementById('empId');
+    const passwordInput = document.getElementById('password');
+    const authError = document.getElementById('authError');
+    const loginSuccess = document.getElementById('loginSuccess');
+
+    function clearErrors() {
+      authError.classList.remove('visible');
+      document.querySelectorAll('.form-error').forEach(el => el.classList.remove('visible'));
+      document.querySelectorAll('.form-input').forEach(el => el.classList.remove('error'));
+    }
+
+    function showFieldError(inputId, errorId, message) {
+      document.getElementById(inputId).classList.add('error');
+      const err = document.getElementById(errorId);
+      err.textContent = message;
+      err.classList.add('visible');
+    }
+
+    function validateForm() {
+      clearErrors();
+      let valid = true;
+
+      const empId = empIdInput.value.trim();
+      const password = passwordInput.value;
+
+      if (!empId) {
+        showFieldError('empId', 'empIdError', 'Employee ID is required.');
+        valid = false;
+      } else if (!/^(NMDC-BC|BML)-[A-Z]{2,3}-\d{3}$/.test(empId)) {
+        showFieldError('empId', 'empIdError', 'Enter a valid Employee ID (e.g. NMDC-BC-ADM-001).');
+        valid = false;
+      }
+
+      if (!password) {
+        showFieldError('password', 'passwordError', 'Password is required.');
+        valid = false;
+      } else if (password.length < 6) {
+        showFieldError('password', 'passwordError', 'Password must be at least 6 characters.');
+        valid = false;
+      }
+
+      return valid;
+    }
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      if (!validateForm()) return;
+
+      const result = authenticateUser(empIdInput.value.trim(), passwordInput.value);
+
+      if (result.success) {
+        authError.classList.remove('visible');
+        loginSuccess.classList.add('visible');
+        document.getElementById('loginBtn').disabled = true;
+        document.getElementById('loginBtn').textContent = 'Authenticating…';
+        setTimeout(() => { window.location.href = 'portal.html'; }, 1200);
+      } else {
+        loginSuccess.classList.remove('visible');
+        authError.textContent = result.message || 'Invalid Employee ID or Password. Please try again.';
+        authError.classList.add('visible');
+        passwordInput.classList.add('error');
+        passwordInput.value = '';
+        passwordInput.focus();
+      }
+    });
+
+    document.getElementById('resetBtn').addEventListener('click', () => {
+      form.reset();
+      clearErrors();
+      loginSuccess.classList.remove('visible');
+      empIdInput.focus();
+    });
+
+    empIdInput.addEventListener('input', () => {
+      empIdInput.classList.remove('error');
+      document.getElementById('empIdError').classList.remove('visible');
+      authError.classList.remove('visible');
+    });
+
+    passwordInput.addEventListener('input', () => {
+      passwordInput.classList.remove('error');
+      document.getElementById('passwordError').classList.remove('visible');
+      authError.classList.remove('visible');
+    });
+  </script>
+</body>
+</html>

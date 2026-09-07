@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="NMDC Governance — Statutory Disclosures, RTI Access, Annual Reports, CSR Metrics, and Contact Directory for NMDC Limited.">
+  <title>Governance &amp; Contact — NMDC Limited, Bacheli Complex</title>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ACCESSIBILITY BAR -->
+  <div class="a11y-bar" id="a11yBar">
+    <div class="max-w-7xl mx-auto px-4 py-2 flex items-center justify-between flex-wrap gap-2">
+      <div class="flex items-center gap-3">
+        <span class="opacity-70 text-xs uppercase tracking-widest mr-2">Accessibility</span>
+        <button id="btnEn" class="active" onclick="setLang('en')">English</button>
+        <button id="btnHi" onclick="setLang('hi')">हिन्दी</button>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="opacity-70 text-xs uppercase tracking-widest mr-1">Text</span>
+        <button onclick="resizeText(-1)">A−</button>
+        <button onclick="resizeText(0)">A</button>
+        <button onclick="resizeText(1)">A+</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MARQUEE -->
+  <div class="marquee-track py-2">
+    <div class="marquee-content">
+      ◆ EXTENSION: Tender NIT-MIN-2026-089 deadline extended to June 15. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ NOTICE: Bidders are requested to update their structural KYC credentials on the CPPP portal immediately. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ EXTENSION: Tender NIT-MIN-2026-089 deadline extended to June 15. &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; ◆ NOTICE: Bidders are requested to update their structural KYC credentials on the CPPP portal immediately.
+    </div>
+  </div>
+
+  <!-- STICKY NAVBAR -->
+  <nav class="main-nav" id="mainNav">
+    <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="index.html" class="flex items-center gap-3">
+        <div class="logomark">NMDC</div>
+        <div>
+          <div class="text-white font-extrabold text-lg leading-tight" data-i18n="brandName">NMDC Limited</div>
+          <div class="text-gray-400 text-xs font-medium tracking-wider">A Govt. of India Enterprise</div>
+        </div>
+      </a>
+      <button class="hamburger" onclick="toggleMobileMenu()" aria-label="Toggle menu"><span></span><span></span><span></span></button>
+      <div class="nav-links flex items-center gap-1" id="navLinks">
+        <a href="index.html" class="nav-link" data-i18n="navHome">Home</a>
+        <a href="about.html" class="nav-link" data-i18n="navAbout">About Us</a>
+        <a href="business.html" class="nav-link" data-i18n="navBusiness">Our Business</a>
+        <a href="csit.html" class="nav-link" data-i18n="navCSIT">CS&amp;IT Department</a>
+        <a href="digital-initiatives.html" class="nav-link" data-i18n="navDigital">Digital Initiatives</a>
+        <a href="tenders.html" class="nav-link" data-i18n="navProcurement">Procurement</a>
+        <a href="governance.html" class="nav-link active" data-i18n="navGovernance">Governance &amp; Contact</a>
+        <a href="portal-login.html" class="nav-link" data-i18n="navPortal">CS&amp;IT Portal</a>
+      </div>
+    </div>
+  </nav>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="max-w-7xl mx-auto px-4 pt-12 pb-6">
+      <div class="accent-bar mb-4"></div>
+      <h1 class="text-4xl font-black text-gray-900 mb-2" data-i18n="govTitle">Governance, Disclosures &amp; Contact</h1>
+      <p class="text-gray-500 text-lg max-w-3xl">NMDC Limited is committed to the highest standards of transparency, corporate governance, and citizen-centric information disclosure as mandated by RTI Act 2005 and SEBI LODR Regulations.</p>
+    </section>
+
+    <!-- TRANSPARENCY VAULT -->
+    <section class="max-w-7xl mx-auto px-4 mb-16">
+      <h2 class="section-heading mb-6" data-i18n="vaultTitle">Transparency Vault — Document Repository</h2>
+      <div class="grid md:grid-cols-3 lg:grid-cols-5 gap-5">
+
+        <a href="#" class="doc-tile" id="docAnnualReport">
+          <div class="doc-icon">📊</div>
+          <div>
+            <h3 class="font-bold text-sm mb-1">Annual Financial Reports</h3>
+            <p class="text-xs text-gray-400">FY 2024-25 Audited Statements, Director's Report & Balance Sheet</p>
+            <span class="text-amber-600 text-xs font-semibold mt-2 inline-block">Download PDF ↓</span>
+          </div>
+        </a>
+
+        <a href="#" class="doc-tile" id="docSEBI">
+          <div class="doc-icon">📋</div>
+          <div>
+            <h3 class="font-bold text-sm mb-1">SEBI Disclosures</h3>
+            <p class="text-xs text-gray-400">Quarterly shareholding, board composition & related-party transactions</p>
+            <span class="text-amber-600 text-xs font-semibold mt-2 inline-block">Download PDF ↓</span>
+          </div>
+        </a>
+
+        <a href="#" class="doc-tile" id="docRTI">
+          <div class="doc-icon">🏛️</div>
+          <div>
+            <h3 class="font-bold text-sm mb-1">RTI Statutory Guidelines</h3>
+            <p class="text-xs text-gray-400">Section 4(1)(b) proactive disclosures, CPIO designation & fee structure</p>
+            <span class="text-amber-600 text-xs font-semibold mt-2 inline-block">Download PDF ↓</span>
+          </div>
+        </a>
+
+        <a href="#" class="doc-tile" id="docCSR">
+          <div class="doc-icon">🤝</div>
+          <div>
+            <h3 class="font-bold text-sm mb-1">CSR Metrics &amp; Projects</h3>
+            <p class="text-xs text-gray-400">₹186 Cr spent on education, healthcare, skill development & water conservation</p>
+            <span class="text-amber-600 text-xs font-semibold mt-2 inline-block">Download PDF ↓</span>
+          </div>
+        </a>
+
+        <a href="#" class="doc-tile" id="docEnvironment">
+          <div class="doc-icon">🌿</div>
+          <div>
+            <h3 class="font-bold text-sm mb-1">Environmental Clearances</h3>
+            <p class="text-xs text-gray-400">MoEFCC EC letters, mine closure plans & EIA notifications for all active sites</p>
+            <span class="text-amber-600 text-xs font-semibold mt-2 inline-block">Download PDF ↓</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- DEPARTMENT DIRECTORY -->
+    <section class="max-w-7xl mx-auto px-4 mb-20">
+      <h2 class="section-heading mb-2" data-i18n="directoryTitle">Open Department Directory</h2>
+      <p class="text-gray-500 mb-8 text-sm">Official contact details verified as of May 2026. For general enquiries, call the Corporate HQ switchboard.</p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <!-- Corporate HQ (Registered Office) -->
+        <div class="directory-card" id="dirCorporateHQ">
+          <h3>🏢 Corporate Headquarters (Registered Office)</h3>
+          <p>
+            <strong style="color: #FFB81C;">Address:</strong> Khanij Bhavan, 10-3-311/A, Castle Hills, Masab Tank, Hyderabad, Telangana – 500028<br><br>
+            <strong style="color: #FFB81C;">CMD Office:</strong> Shri Amitava Mukherjee, Chairman-cum-Managing Director<br>
+            <strong style="color: #FFB81C;">Email:</strong> <a href="mailto:cmd@nmdc.co.in">cmd@nmdc.co.in</a><br>
+            <strong style="color: #FFB81C;">Phone:</strong> <a href="tel:04023538713">040-23538713-21</a> (9 lines)<br>
+            <strong style="color: #FFB81C;">Fax:</strong> 040-23538711<br>
+            <strong style="color: #FFB81C;">CIN:</strong> L13100TG1958GOI001674<br>
+            <strong style="color: #FFB81C;">Website:</strong> <a href="https://www.nmdc.co.in" target="_blank" rel="noopener">www.nmdc.co.in</a>
+          </p>
+        </div>
+
+        <!-- Bacheli Complex Office -->
+        <div class="directory-card" id="dirBacheliOffice">
+          <h3>⛏️ Bacheli Complex Office</h3>
+          <p>
+            <strong style="color: #FFB81C;">Address:</strong> NMDC Limited, Bacheli Complex, Bacheli P.O., Dantewada District, Chhattisgarh – 494553<br><br>
+            <strong style="color: #FFB81C;">Complex Head:</strong> Chief General Manager (Bacheli Complex)<br>
+            <strong style="color: #FFB81C;">Phone:</strong> <a href="tel:07857230356">07857-230356</a><br>
+            <strong style="color: #FFB81C;">Fax:</strong> 07857-230423 / 230170 / 231253<br>
+            <strong style="color: #FFB81C;">Email:</strong> <a href="mailto:bachelicomplex@nmdc.co.in">bachelicomplex@nmdc.co.in</a>
+          </p>
+        </div>
+
+        <!-- Tender Cell -->
+        <div class="directory-card" id="dirTenderCell">
+          <h3>📋 Tender Cell / Procurement Wing</h3>
+          <p>
+            <strong style="color: #FFB81C;">Contact Person:</strong> Shri R.K. Srivastava, GM (Procurement)<br><br>
+            <strong style="color: #FFB81C;">Phone:</strong> <a href="tel:07857230356">07857-230356</a>, Ext. 2045<br>
+            <strong style="color: #FFB81C;">Email:</strong> <a href="mailto:tender.cell@nmdc.co.in">tender.cell@nmdc.co.in</a><br>
+            <strong style="color: #FFB81C;">CPPP Portal:</strong> <a href="#">eprocure.gov.in/nmdc</a><br>
+            <strong style="color: #FFB81C;">Timings:</strong> Mon–Fri, 09:30 – 17:30 IST
+          </p>
+        </div>
+
+        <!-- Commercial Sales -->
+        <div class="directory-card" id="dirSales">
+          <h3>💰 Commercial Sales Desk</h3>
+          <p>
+            <strong style="color: #FFB81C;">Contact Person:</strong> Smt. Anjali Kumari, DGM (Commercial)<br><br>
+            <strong style="color: #FFB81C;">Phone:</strong> <a href="tel:07857230356">07857-230356</a>, Ext. 3012<br>
+            <strong style="color: #FFB81C;">Email:</strong> <a href="mailto:sales@nmdc.co.in">sales@nmdc.co.in</a><br>
+            <strong style="color: #FFB81C;">E-Auction:</strong> <a href="#">MSTC/NMDC Linkage Portal</a><br>
+            <strong style="color: #FFB81C;">Ore Booking:</strong> Advance payment via NEFT/RTGS only
+          </p>
+        </div>
+
+        <!-- RTI / Communications -->
+        <div class="directory-card" id="dirRTI">
+          <h3>📡 Corporate Communications &amp; RTI Cell</h3>
+          <p>
+            <strong style="color: #FFB81C;">CPIO:</strong> Shri V.P. Mehta, Company Secretary<br><br>
+            <strong style="color: #FFB81C;">Phone:</strong> <a href="tel:07857230356">07857-230356</a>, Ext. 4001<br>
+            <strong style="color: #FFB81C;">RTI Email:</strong> <a href="mailto:rti.cpio@nmdc.co.in">rti.cpio@nmdc.co.in</a><br>
+            <strong style="color: #FFB81C;">Appellate:</strong> <a href="mailto:rti.appellate@nmdc.co.in">rti.appellate@nmdc.co.in</a><br>
+            <strong style="color: #FFB81C;">RTI Fee:</strong> ₹10 via IPO / DD favouring NMDC Limited
+          </p>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- MEGA FOOTER -->
+  <footer class="main-footer">
+    <div class="max-w-7xl mx-auto px-4 py-14">
+      <div class="grid md:grid-cols-4 gap-10">
+        <div>
+          <h4>Quick Links</h4>
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="business.html">Mineral Portfolio</a>
+          <a href="csit.html">CS&amp;IT Department</a>
+          <a href="digital-initiatives.html">Digital Initiatives</a>
+          <a href="tenders.html">E-Procurement</a>
+          <a href="governance.html">RTI &amp; Governance</a>
+          <a href="portal-login.html">CS&amp;IT Portal</a>
+          <a href="#">Careers</a>
+          <a href="#">Investor Relations</a>
+        </div>
+        <div>
+          <h4>Statutory Compliance</h4>
+          <a href="#">Mines Act, 1952 Compliance</a><a href="#">MMDR Act Adherence</a><a href="#">Environmental Clearances</a><a href="#">SEBI LODR Filings</a><a href="#">Vigilance & Anti-Corruption</a>
+        </div>
+        <div>
+          <h4>Contact</h4>
+          <p class="text-sm leading-relaxed mb-2">NMDC Corporate HQ<br>Khanij Bhavan, Masab Tank<br>Hyderabad, Telangana – 500028</p>
+          <a href="tel:07857230356">☎ 07857-230356</a>
+          <a href="mailto:info@nmdc.co.in">✉ info@nmdc.co.in</a>
+        </div>
+        <div>
+          <h4>Affiliations</h4>
+          <div class="footer-badge mb-3"><div class="text-amber-400 font-bold text-sm mb-1">Ministry of Steel</div><div class="text-xs">Government of India</div></div>
+          <div class="footer-badge"><div class="text-amber-400 font-bold text-sm mb-1">ISO 9001:2015</div><div class="text-xs">Quality Management Certified</div></div>
+        </div>
+      </div>
+      <div class="border-t border-gray-700 mt-10 pt-6 text-center text-xs text-gray-500">
+        <p>© 2026 NMDC Limited. All Rights Reserved. | A Government of India Enterprise under the Ministry of Steel.</p>
+        <p class="mt-2 text-gray-400">Bacheli Complex, Dantewada, Chhattisgarh — This is an independent academic project and is not affiliated with or endorsed by NMDC Limited.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const translations = {
+      en: { brandName:'NMDC Limited', navHome:'Home', navAbout:'About Us', navBusiness:'Our Business', navCSIT:'CS&IT Department', navDigital:'Digital Initiatives', navProcurement:'Procurement', navGovernance:'Governance & Contact', navPortal:'CS&IT Portal', govTitle:'Governance, Disclosures & Contact', vaultTitle:'Transparency Vault — Document Repository', directoryTitle:'Open Department Directory' },
+      hi: { brandName:'भारत खनिज लिमिटेड', navHome:'मुखपृष्ठ', navAbout:'हमारे बारे में', navBusiness:'हमारा व्यवसाय', navCSIT:'CS&IT विभाग', navDigital:'डिजिटल पहल', navProcurement:'खरीद', navGovernance:'शासन एवं संपर्क', navPortal:'CS&IT पोर्टल', govTitle:'शासन, प्रकटीकरण एवं संपर्क', vaultTitle:'पारदर्शिता वॉल्ट — दस्तावेज़ भंडार', directoryTitle:'विभाग निर्देशिका' }
+    };
+    let currentLang = 'en';
+    function setLang(lang) {
+      currentLang = lang;
+      document.getElementById('btnEn').classList.toggle('active', lang === 'en');
+      document.getElementById('btnHi').classList.toggle('active', lang === 'hi');
+      document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.getAttribute('data-i18n'); if (translations[lang][k]) el.textContent = translations[lang][k]; });
+    }
+    let fontStep = 0;
+    function resizeText(dir) { if (dir === 0) fontStep = 0; else fontStep = Math.max(-3, Math.min(3, fontStep + dir)); document.documentElement.style.fontSize = (17 + fontStep * 2) + 'px'; }
+    function toggleMobileMenu() { document.getElementById('navLinks').classList.toggle('open'); }
+    window.addEventListener('scroll', () => { document.getElementById('mainNav').classList.toggle('scrolled', window.scrollY > 20); });
+  </script>
+</body>
+</html>
