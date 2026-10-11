@@ -1,6 +1,6 @@
-# BML Portal Extension — Implementation Plan
+# NMDC Portal Extension — Implementation Plan
 
-Extend the existing Bharat Minerals Limited corporate portal with 4 new public pages and 5 internal CS&IT portal pages, while preserving the current "Sleek Industrial Glassmorphism" design system.
+Extend the existing NMDC Limited corporate portal with 4 new public pages and 5 internal CS&IT portal pages, while preserving the current "Sleek Industrial Glassmorphism" design system.
 
 ## Existing Design System (Preserved)
 

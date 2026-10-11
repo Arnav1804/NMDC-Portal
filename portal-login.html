@@ -109,7 +109,7 @@
       if (!empId) {
         showFieldError('empId', 'empIdError', 'Employee ID is required.');
         valid = false;
-      } else if (!/^(NMDC-BC|BML)-[A-Z]{2,3}-\d{3}$/.test(empId)) {
+      } else if (!/^NMDC-BC-[A-Z]{2,3}-\d{3}$/.test(empId)) {
         showFieldError('empId', 'empIdError', 'Enter a valid Employee ID (e.g. NMDC-BC-ADM-001).');
         valid = false;
       }
