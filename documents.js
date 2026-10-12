@@ -28,29 +28,31 @@ const ALLOWED_EXTENSIONS = ['pdf', 'docx', 'xlsx', 'csv'];
 
 function getDefaultDocuments() {
   return [
-    { id: 'DOC-2026-001', title: 'Network Maintenance Notice', category: 'Notice', status: 'Active', uploadedBy: 'Shri B.N. Prasad', uploadDate: '2026-05-28', version: '1.2', description: 'Scheduled network maintenance across Bacheli and Kirandul mine sites for core switch upgrades.', fileName: 'network-maintenance-notice.pdf' },
-    { id: 'DOC-2026-002', title: 'ERP User Guide', category: 'IT Documentation', status: 'Active', uploadedBy: 'Shri D.K. Mohanty', uploadDate: '2026-05-25', version: '3.0', description: 'Comprehensive SAP S/4HANA user guide for Finance, MM, and HR modules.', fileName: 'erp-user-guide.pdf' },
-    { id: 'DOC-2026-003', title: 'Fiber Ring SOP', category: 'SOP', status: 'Approved', uploadedBy: 'Smt. Priya Sharma', uploadDate: '2026-05-22', version: '2.1', description: 'Standard operating procedure for fiber ring network monitoring and fault escalation.', fileName: 'fiber-ring-sop.pdf' },
-    { id: 'DOC-2026-004', title: 'Cyber Security Policy', category: 'Policy', status: 'Active', uploadedBy: 'Shri V.S. Rajan', uploadDate: '2026-05-20', version: '2.3', description: 'Enterprise cyber security policy aligned with CERT-In advisories and ISO 27001 controls.', fileName: 'cyber-security-policy.pdf' },
-    { id: 'DOC-2026-005', title: 'Monthly IT Review Minutes', category: 'Meeting Minutes', status: 'Approved', uploadedBy: 'Shri R.K. Verma', uploadDate: '2026-05-18', version: '1.0', description: 'Minutes of the May 2026 CS&IT department monthly review meeting, Bacheli Regional Office.', fileName: 'it-review-minutes-may2026.pdf' },
-    { id: 'DOC-2026-006', title: 'Server Maintenance Circular', category: 'Circular', status: 'Active', uploadedBy: 'Smt. Kavita Rao', uploadDate: '2026-05-15', version: '1.0', description: 'Circular regarding scheduled server patching window for Bacheli Data Center.', fileName: 'server-maintenance-circular.pdf' },
-    { id: 'DOC-2026-007', title: 'Helpdesk Escalation SOP', category: 'SOP', status: 'Pending Review', uploadedBy: 'Shri P. Lakshman', uploadDate: '2026-05-12', version: '1.1', description: 'Revised helpdesk ticket escalation matrix and SLA response timelines.', fileName: 'helpdesk-escalation-sop.docx' },
-    { id: 'DOC-2026-008', title: 'Data Center Access Policy', category: 'Policy', status: 'Draft', uploadedBy: 'Shri R.K. Verma', uploadDate: '2026-05-10', version: '0.9', description: 'Draft policy for physical and logical access control to Bacheli and Bhubaneswar data centers.', fileName: 'dc-access-policy-draft.pdf' },
-    { id: 'DOC-2026-009', title: 'VPN Configuration Guide', category: 'IT Documentation', status: 'Active', uploadedBy: 'Shri B.N. Prasad', uploadDate: '2026-05-08', version: '1.4', description: 'Step-by-step VPN client configuration for remote mine site connectivity.', fileName: 'vpn-config-guide.pdf' },
-    { id: 'DOC-2026-010', title: 'Quarterly Audit Notice', category: 'Notice', status: 'Archived', uploadedBy: 'Shri R.K. Verma', uploadDate: '2026-03-31', version: '1.0', description: 'Q1 2026 internal IT audit schedule and compliance checklist for all regional offices.', fileName: 'q1-audit-notice.pdf' },
-    { id: 'DOC-2026-011', title: 'Backup & Recovery SOP', category: 'SOP', status: 'Active', uploadedBy: 'Smt. Kavita Rao', uploadDate: '2026-05-05', version: '2.0', description: 'Disaster recovery and backup verification procedures for dual data center architecture.', fileName: 'backup-recovery-sop.pdf' },
-    { id: 'DOC-2025-089', title: 'Legacy Network Diagram', category: 'IT Documentation', status: 'Archived', uploadedBy: 'Shri B.N. Prasad', uploadDate: '2025-12-15', version: '4.2', description: 'Superseded network topology diagram — replaced by v5.0 in active repository.', fileName: 'legacy-network-diagram.pdf' }
+    { id: 'DOC-2026-001', title: 'Network Maintenance Notice', category: 'Notice', status: 'Active', uploadedBy: 'Demo User 04', uploadDate: daysAgo(2), version: '1.2', description: 'Scheduled network maintenance across Bacheli and Kirandul mine sites for core switch upgrades.', fileName: 'network-maintenance-notice.pdf' },
+    { id: 'DOC-2026-002', title: 'ERP User Guide', category: 'IT Documentation', status: 'Active', uploadedBy: 'Demo User 06', uploadDate: daysAgo(5), version: '3.0', description: 'Comprehensive SAP S/4HANA user guide for Finance, MM, and HR modules.', fileName: 'erp-user-guide.pdf' },
+    { id: 'DOC-2026-003', title: 'Fiber Ring SOP', category: 'SOP', status: 'Approved', uploadedBy: 'Demo User 02 (Officer)', uploadDate: daysAgo(8), version: '2.1', description: 'Standard operating procedure for fiber ring network monitoring and fault escalation.', fileName: 'fiber-ring-sop.pdf' },
+    { id: 'DOC-2026-004', title: 'Cyber Security Policy', category: 'Policy', status: 'Active', uploadedBy: 'Demo User 08', uploadDate: daysAgo(10), version: '2.3', description: 'Enterprise cyber security policy aligned with CERT-In advisories and ISO 27001 controls.', fileName: 'cyber-security-policy.pdf' },
+    { id: 'DOC-2026-005', title: 'Monthly IT Review Minutes', category: 'Meeting Minutes', status: 'Approved', uploadedBy: 'Demo User 01 (Admin)', uploadDate: daysAgo(12), version: '1.0', description: 'Minutes of the CS&IT department monthly review meeting, Bacheli Complex.', fileName: 'it-review-minutes.pdf' },
+    { id: 'DOC-2026-006', title: 'Server Maintenance Circular', category: 'Circular', status: 'Active', uploadedBy: 'Demo User 05', uploadDate: daysAgo(15), version: '1.0', description: 'Circular regarding scheduled server patching window for Bacheli Data Center.', fileName: 'server-maintenance-circular.pdf' },
+    { id: 'DOC-2026-007', title: 'Helpdesk Escalation SOP', category: 'SOP', status: 'Pending Review', uploadedBy: 'Demo User 07', uploadDate: daysAgo(18), version: '1.1', description: 'Revised helpdesk ticket escalation matrix and SLA response timelines.', fileName: 'helpdesk-escalation-sop.docx' },
+    { id: 'DOC-2026-008', title: 'Data Center Access Policy', category: 'Policy', status: 'Draft', uploadedBy: 'Demo User 01 (Admin)', uploadDate: daysAgo(20), version: '0.9', description: 'Draft policy for physical and logical access control to Bacheli and Bhubaneswar data centers.', fileName: 'dc-access-policy-draft.pdf' },
+    { id: 'DOC-2026-009', title: 'VPN Configuration Guide', category: 'IT Documentation', status: 'Active', uploadedBy: 'Demo User 04', uploadDate: daysAgo(22), version: '1.4', description: 'Step-by-step VPN client configuration for remote mine site connectivity.', fileName: 'vpn-config-guide.pdf' },
+    { id: 'DOC-2026-010', title: 'Quarterly Audit Notice', category: 'Notice', status: 'Archived', uploadedBy: 'Demo User 01 (Admin)', uploadDate: daysAgo(45), version: '1.0', description: 'Internal IT audit schedule and compliance checklist for all complex offices.', fileName: 'q1-audit-notice.pdf' },
+    { id: 'DOC-2026-011', title: 'Backup & Recovery SOP', category: 'SOP', status: 'Active', uploadedBy: 'Demo User 05', uploadDate: daysAgo(25), version: '2.0', description: 'Disaster recovery and backup verification procedures for dual data center architecture.', fileName: 'backup-recovery-sop.pdf' },
+    { id: 'DOC-2025-089', title: 'Legacy Network Diagram', category: 'IT Documentation', status: 'Archived', uploadedBy: 'Demo User 04', uploadDate: daysAgo(120), version: '4.2', description: 'Superseded network topology diagram — replaced by v5.0 in active repository.', fileName: 'legacy-network-diagram.pdf' }
   ];
 }
 
 function initDocumentsStore() {
-  if (localStorage.getItem(DOCUMENTS_SEED_KEY)) {
-    try {
-      return JSON.parse(localStorage.getItem(DOCUMENTS_KEY) || '[]');
-    } catch {
-      return getDefaultDocuments();
+  try {
+    const stored = JSON.parse(localStorage.getItem(DOCUMENTS_KEY) || '[]');
+    if (stored.length && stored[0].uploadDate && (stored[0].uploadDate.startsWith('2026-05') || stored[0].uploadDate.startsWith('2026-06') || stored[0].uploadedBy.includes('Shri'))) {
+      const docs = getDefaultDocuments();
+      localStorage.setItem(DOCUMENTS_KEY, JSON.stringify(docs));
+      return docs;
     }
-  }
+    if (stored.length) return stored;
+  } catch { /* use defaults */ }
   const docs = getDefaultDocuments();
   localStorage.setItem(DOCUMENTS_KEY, JSON.stringify(docs));
   localStorage.setItem(DOCUMENTS_SEED_KEY, 'true');
@@ -385,15 +387,15 @@ const DocumentManager = {
     if (!doc) return;
 
     document.getElementById('viewModalBody').innerHTML = `
-      <div class="view-detail-row"><span class="view-detail-label">Document ID</span><span class="view-detail-value doc-id">${doc.id}</span></div>
-      <div class="view-detail-row"><span class="view-detail-label">Title</span><span class="view-detail-value">${doc.title}</span></div>
-      <div class="view-detail-row"><span class="view-detail-label">Category</span><span class="view-detail-value">${doc.category}</span></div>
-      <div class="view-detail-row"><span class="view-detail-label">Status</span><span class="view-detail-value"><span class="doc-status-badge ${statusBadgeClass(doc.status)}">${doc.status}</span></span></div>
-      <div class="view-detail-row"><span class="view-detail-label">Version</span><span class="view-detail-value">${doc.version}</span></div>
-      <div class="view-detail-row"><span class="view-detail-label">Uploaded By</span><span class="view-detail-value">${doc.uploadedBy}</span></div>
-      <div class="view-detail-row"><span class="view-detail-label">Upload Date</span><span class="view-detail-value">${formatDate(doc.uploadDate)}</span></div>
-      <div class="view-detail-row"><span class="view-detail-label">File</span><span class="view-detail-value">${doc.fileName || '—'}</span></div>
-      <div class="view-detail-row"><span class="view-detail-label">Description</span><span class="view-detail-value">${doc.description || '—'}</span></div>
+      <div class="view-detail-row"><span class="view-detail-label">Document ID</span><span class="view-detail-value doc-id">${escHtml(doc.id)}</span></div>
+      <div class="view-detail-row"><span class="view-detail-label">Title</span><span class="view-detail-value">${escHtml(doc.title)}</span></div>
+      <div class="view-detail-row"><span class="view-detail-label">Category</span><span class="view-detail-value">${escHtml(doc.category)}</span></div>
+      <div class="view-detail-row"><span class="view-detail-label">Status</span><span class="view-detail-value"><span class="doc-status-badge ${statusBadgeClass(doc.status)}">${escHtml(doc.status)}</span></span></div>
+      <div class="view-detail-row"><span class="view-detail-label">Version</span><span class="view-detail-value">${escHtml(doc.version)}</span></div>
+      <div class="view-detail-row"><span class="view-detail-label">Uploaded By</span><span class="view-detail-value">${escHtml(doc.uploadedBy)}</span></div>
+      <div class="view-detail-row"><span class="view-detail-label">Upload Date</span><span class="view-detail-value">${escHtml(formatDate(doc.uploadDate))}</span></div>
+      <div class="view-detail-row"><span class="view-detail-label">File</span><span class="view-detail-value">${escHtml(doc.fileName || '—')}</span></div>
+      <div class="view-detail-row"><span class="view-detail-label">Description</span><span class="view-detail-value">${escHtml(doc.description || '—')}</span></div>
     `;
     openModal('viewModal');
   },

@@ -22,41 +22,43 @@ const ASSET_STATUS_CLASS = {
 
 function getDefaultAssets() {
   return [
-    { id: 'NET-001', name: 'Cisco Core Switch — Catalyst 9500', category: 'Networking', location: 'Bacheli DC', assignedUser: 'Shri B.N. Prasad', status: 'Active', purchaseDate: '2021-08-12', vendor: 'Cisco Systems India', warrantyExpiry: '2026-07-01', lastUpdated: '2026-05-30', description: 'Primary core switch for Bacheli data center fiber ring aggregation.' },
-    { id: 'SRV-102', name: 'HP ProLiant DL380 Gen10', category: 'Server', location: 'Bacheli DC', assignedUser: 'Smt. Kavita Rao', status: 'Active', purchaseDate: '2022-03-15', vendor: 'HPE India', warrantyExpiry: '2026-06-18', lastUpdated: '2026-05-28', description: 'Virtualization host for ERP and file services cluster node 1.' },
-    { id: 'SRV-103', name: 'Dell PowerEdge R750', category: 'Server', location: 'Bacheli DC', assignedUser: 'Smt. Kavita Rao', status: 'Maintenance', purchaseDate: '2023-01-20', vendor: 'Dell Technologies', warrantyExpiry: '2027-01-20', lastUpdated: '2026-06-02', description: 'Under scheduled firmware upgrade — cluster node 2, taken offline for patching.' },
-    { id: 'DSK-015', name: 'Dell OptiPlex 7090 Desktop', category: 'Desktop', location: 'Bacheli Regional Office', assignedUser: 'Shri P. Lakshman', status: 'Active', purchaseDate: '2023-06-10', vendor: 'Dell Technologies', warrantyExpiry: '2026-06-10', lastUpdated: '2026-05-15', description: 'Helpdesk team workstation with dual monitor setup.' },
-    { id: 'DSK-016', name: 'Dell OptiPlex 7090 Desktop', category: 'Desktop', location: 'Kirandul Mine Office', assignedUser: 'Shri A.K. Das', status: 'Active', purchaseDate: '2023-06-10', vendor: 'Dell Technologies', warrantyExpiry: '2027-06-10', lastUpdated: '2026-04-22', description: 'Mine site IT support desk workstation.' },
-    { id: 'LPT-042', name: 'Lenovo ThinkPad T14 Gen 3', category: 'Laptop', location: 'Corporate HQ — Delhi', assignedUser: 'Shri R.K. Verma', status: 'Active', purchaseDate: '2024-02-01', vendor: 'Lenovo India', warrantyExpiry: '2027-02-01', lastUpdated: '2026-05-20', description: 'GM (IT) mobile workstation with VPN and encryption enabled.' },
-    { id: 'LPT-043', name: 'Lenovo ThinkPad T14 Gen 3', category: 'Laptop', location: 'Bacheli Regional Office', assignedUser: 'Smt. Priya Sharma', status: 'Active', purchaseDate: '2024-02-01', vendor: 'Lenovo India', warrantyExpiry: '2027-02-01', lastUpdated: '2026-05-25', description: 'Network team manager field laptop for mine site visits.' },
-    { id: 'PRT-008', name: 'Canon imageRUNNER ADVANCE C5535i', category: 'Printer', location: 'Bacheli Regional Office', assignedUser: 'CS&IT Shared Pool', status: 'Active', purchaseDate: '2022-11-05', vendor: 'Canon India', warrantyExpiry: '2026-05-28', lastUpdated: '2026-05-10', description: 'Department multifunction network printer — scan, print, copy.' },
-    { id: 'PRT-009', name: 'HP LaserJet Enterprise M507dn', category: 'Printer', location: 'Kirandul Mine Office', assignedUser: 'CS&IT Shared Pool', status: 'Inactive', purchaseDate: '2020-04-18', vendor: 'HP India', warrantyExpiry: '2025-04-18', lastUpdated: '2026-03-01', description: 'Decommissioned pending replacement — toner supply discontinued.' },
-    { id: 'LIC-201', name: 'Windows Server 2022 Datacenter License', category: 'Software License', location: 'Bacheli DC', assignedUser: 'Smt. Kavita Rao', status: 'Active', purchaseDate: '2023-09-01', vendor: 'Microsoft India', warrantyExpiry: '2028-09-01', lastUpdated: '2026-05-01', description: 'Volume license for 4-node Hyper-V cluster at Bacheli data center.' },
-    { id: 'LIC-202', name: 'SAP S/4HANA Enterprise License', category: 'Software License', location: 'Corporate HQ — Delhi', assignedUser: 'Shri D.K. Mohanty', status: 'Active', purchaseDate: '2019-04-01', vendor: 'SAP India', warrantyExpiry: '2027-04-01', lastUpdated: '2026-04-15', description: 'Enterprise ERP license covering Finance, MM, HR, and PM modules.' },
-    { id: 'CCTV-301', name: 'CCTV Control Station — Hikvision NVR', category: 'CCTV', location: 'Bacheli Mine Perimeter', assignedUser: 'Shri V.S. Rajan', status: 'Active', purchaseDate: '2023-03-22', vendor: 'Hikvision India', warrantyExpiry: '2026-06-22', lastUpdated: '2026-05-18', description: '32-channel NVR for mine perimeter surveillance with 90-day retention.' },
-    { id: 'CCTV-302', name: 'CCTV Control Station — Dahua NVR', category: 'CCTV', location: 'Kirandul Processing Plant', assignedUser: 'Shri V.S. Rajan', status: 'Active', purchaseDate: '2023-07-15', vendor: 'Dahua Technology', warrantyExpiry: '2026-07-15', lastUpdated: '2026-05-12', description: '16-channel NVR for processing plant and weighbridge monitoring.' },
-    { id: 'NET-002', name: 'Fiber Distribution Switch — Juniper EX4300', category: 'Networking', location: 'Kirandul Mine Office', assignedUser: 'Shri B.N. Prasad', status: 'Active', purchaseDate: '2022-05-30', vendor: 'Juniper Networks', warrantyExpiry: '2026-05-30', lastUpdated: '2026-05-29', description: 'Distribution switch for Kirandul mine site fiber connectivity.' },
-    { id: 'NET-003', name: 'Fortinet FortiGate 600E Firewall', category: 'Networking', location: 'Bacheli DC', assignedUser: 'Shri V.S. Rajan', status: 'Active', purchaseDate: '2023-02-14', vendor: 'Fortinet India', warrantyExpiry: '2028-02-14', lastUpdated: '2026-05-22', description: 'Perimeter firewall with IPS, SSL inspection, and VPN termination.' },
-    { id: 'STG-401', name: 'NetApp FAS8300 Storage Array', category: 'Storage Device', location: 'Bacheli DC', assignedUser: 'Smt. Kavita Rao', status: 'Active', purchaseDate: '2022-09-01', vendor: 'NetApp India', warrantyExpiry: '2026-06-05', lastUpdated: '2026-05-27', description: 'Primary SAN storage — 480 TB usable capacity for VM and backup workloads.' },
-    { id: 'STG-402', name: 'Dell EMC PowerVault ME5024', category: 'Storage Device', location: 'Bhubaneswar DR Site', assignedUser: 'Smt. Kavita Rao', status: 'Active', purchaseDate: '2023-04-10', vendor: 'Dell Technologies', warrantyExpiry: '2028-04-10', lastUpdated: '2026-04-30', description: 'Disaster recovery storage replica for Bacheli primary data center.' },
-    { id: 'SRV-104', name: 'IBM Power S1022 Server', category: 'Server', location: 'Bhubaneswar DR Site', assignedUser: 'Smt. Kavita Rao', status: 'Retired', purchaseDate: '2018-06-20', vendor: 'IBM India', warrantyExpiry: '2023-06-20', lastUpdated: '2026-01-15', description: 'Legacy DR server decommissioned after migration to Dell PowerEdge platform.' },
-    { id: 'NET-004', name: 'Aruba Wireless Controller 7240', category: 'Networking', location: 'Bellary Mine Office', assignedUser: 'Shri B.N. Prasad', status: 'Warranty Expiring', purchaseDate: '2021-02-10', vendor: 'HPE Aruba', warrantyExpiry: '2026-06-12', lastUpdated: '2026-05-31', description: 'Wireless LAN controller for Bellary-Hospet mine office campus Wi-Fi.' },
-    { id: 'DSK-017', name: 'HP ProDesk 400 G9 Desktop', category: 'Desktop', location: 'Bellary Mine Office', assignedUser: 'Shri A.K. Das', status: 'Active', purchaseDate: '2024-08-01', vendor: 'HP India', warrantyExpiry: '2027-08-01', lastUpdated: '2026-05-05', description: 'Mine office administrative workstation.' },
-    { id: 'LPT-044', name: 'Dell Latitude 5540 Laptop', category: 'Laptop', location: 'Bhubaneswar DR Site', assignedUser: 'Shri D.K. Mohanty', status: 'Maintenance', purchaseDate: '2024-01-15', vendor: 'Dell Technologies', warrantyExpiry: '2027-01-15', lastUpdated: '2026-06-01', description: 'Sent for keyboard replacement — ERP team field laptop.' },
-    { id: 'LIC-203', name: 'VMware vSphere Enterprise Plus', category: 'Software License', location: 'Bacheli DC', assignedUser: 'Smt. Kavita Rao', status: 'Active', purchaseDate: '2023-11-01', vendor: 'Broadcom (VMware)', warrantyExpiry: '2026-11-01', lastUpdated: '2026-05-08', description: 'Virtualization platform license for 4-host cluster.' },
-    { id: 'CCTV-303', name: 'Axis P3265-LVE Dome Camera (Batch)', category: 'CCTV', location: 'Bacheli Mine Perimeter', assignedUser: 'Shri V.S. Rajan', status: 'Active', purchaseDate: '2024-05-20', vendor: 'Axis Communications', warrantyExpiry: '2026-05-15', lastUpdated: '2026-05-02', description: 'Batch of 24 IP dome cameras — warranty expired, replacement PO raised.' },
-    { id: 'STG-403', name: 'Synology RS3621xs+ NAS', category: 'Storage Device', location: 'Kirandul Mine Office', assignedUser: 'Shri B.N. Prasad', status: 'Active', purchaseDate: '2023-10-05', vendor: 'Synology', warrantyExpiry: '2026-06-25', lastUpdated: '2026-05-20', description: 'Local NAS for mine site backup and document cache.' }
+    { id: 'NET-001', name: 'Cisco Core Switch — Catalyst 9500', category: 'Networking', location: 'Bacheli DC', assignedUser: 'Demo User 04', status: 'Active', purchaseDate: daysAgo(500), vendor: 'Cisco Systems India', warrantyExpiry: daysFromNow(400), lastUpdated: daysAgo(5), description: 'Primary core switch for Bacheli data center fiber ring aggregation.' },
+    { id: 'SRV-102', name: 'HP ProLiant DL380 Gen10', category: 'Server', location: 'Bacheli DC', assignedUser: 'Demo User 05', status: 'Active', purchaseDate: daysAgo(400), vendor: 'HPE India', warrantyExpiry: daysFromNow(20), lastUpdated: daysAgo(3), description: 'Virtualization host for ERP and file services cluster node 1.' },
+    { id: 'SRV-103', name: 'Dell PowerEdge R750', category: 'Server', location: 'Bacheli DC', assignedUser: 'Demo User 05', status: 'Maintenance', purchaseDate: daysAgo(300), vendor: 'Dell Technologies', warrantyExpiry: daysFromNow(350), lastUpdated: daysAgo(1), description: 'Under scheduled firmware upgrade — cluster node 2, taken offline for patching.' },
+    { id: 'DSK-015', name: 'Dell OptiPlex 7090 Desktop', category: 'Desktop', location: 'Bacheli Complex', assignedUser: 'Demo User 07', status: 'Active', purchaseDate: daysAgo(200), vendor: 'Dell Technologies', warrantyExpiry: daysFromNow(25), lastUpdated: daysAgo(4), description: 'Helpdesk team workstation with dual monitor setup.' },
+    { id: 'DSK-016', name: 'Dell OptiPlex 7090 Desktop', category: 'Desktop', location: 'Kirandul Mine Office', assignedUser: 'Demo User 03 (Viewer)', status: 'Active', purchaseDate: daysAgo(250), vendor: 'Dell Technologies', warrantyExpiry: daysFromNow(365), lastUpdated: daysAgo(10), description: 'Mine site IT support desk workstation.' },
+    { id: 'LPT-042', name: 'Lenovo ThinkPad T14 Gen 3', category: 'Laptop', location: 'Corporate HQ — Hyderabad', assignedUser: 'Demo User 01 (Admin)', status: 'Active', purchaseDate: daysAgo(150), vendor: 'Lenovo India', warrantyExpiry: daysFromNow(500), lastUpdated: daysAgo(7), description: 'GM (IT) mobile workstation with VPN and encryption enabled.' },
+    { id: 'LPT-043', name: 'Lenovo ThinkPad T14 Gen 3', category: 'Laptop', location: 'Bacheli Complex', assignedUser: 'Demo User 02 (Officer)', status: 'Active', purchaseDate: daysAgo(150), vendor: 'Lenovo India', warrantyExpiry: daysFromNow(500), lastUpdated: daysAgo(2), description: 'Network team manager field laptop for mine site visits.' },
+    { id: 'PRT-008', name: 'Canon imageRUNNER ADVANCE C5535i', category: 'Printer', location: 'Bacheli Complex', assignedUser: 'CS&IT Shared Pool', status: 'Active', purchaseDate: daysAgo(350), vendor: 'Canon India', warrantyExpiry: daysFromNow(180), lastUpdated: daysAgo(12), description: 'Department multifunction network printer — scan, print, copy.' },
+    { id: 'PRT-009', name: 'HP LaserJet Enterprise M507dn', category: 'Printer', location: 'Kirandul Mine Office', assignedUser: 'CS&IT Shared Pool', status: 'Inactive', purchaseDate: daysAgo(800), vendor: 'HP India', warrantyExpiry: daysAgo(100), lastUpdated: daysAgo(30), description: 'Decommissioned pending replacement — toner supply discontinued.' },
+    { id: 'LIC-201', name: 'Windows Server 2022 Datacenter License', category: 'Software License', location: 'Bacheli DC', assignedUser: 'Demo User 05', status: 'Active', purchaseDate: daysAgo(300), vendor: 'Microsoft India', warrantyExpiry: daysFromNow(700), lastUpdated: daysAgo(15), description: 'Volume license for 4-node Hyper-V cluster at Bacheli data center.' },
+    { id: 'LIC-202', name: 'SAP S/4HANA Enterprise License', category: 'Software License', location: 'Corporate HQ — Hyderabad', assignedUser: 'Demo User 06', status: 'Active', purchaseDate: daysAgo(600), vendor: 'SAP India', warrantyExpiry: daysFromNow(450), lastUpdated: daysAgo(14), description: 'Enterprise ERP license covering Finance, MM, HR, and PM modules.' },
+    { id: 'CCTV-301', name: 'CCTV Control Station — Hikvision NVR', category: 'CCTV', location: 'Bacheli Mine Perimeter', assignedUser: 'Demo User 08', status: 'Active', purchaseDate: daysAgo(280), vendor: 'Hikvision India', warrantyExpiry: daysFromNow(300), lastUpdated: daysAgo(6), description: '32-channel NVR for mine perimeter surveillance with 90-day retention.' },
+    { id: 'CCTV-302', name: 'CCTV Control Station — Dahua NVR', category: 'CCTV', location: 'Kirandul Processing Plant', assignedUser: 'Demo User 08', status: 'Active', purchaseDate: daysAgo(240), vendor: 'Dahua Technology', warrantyExpiry: daysFromNow(260), lastUpdated: daysAgo(8), description: '16-channel NVR for processing plant and weighbridge monitoring.' },
+    { id: 'NET-002', name: 'Fiber Distribution Switch — Juniper EX4300', category: 'Networking', location: 'Kirandul Mine Office', assignedUser: 'Demo User 04', status: 'Active', purchaseDate: daysAgo(350), vendor: 'Juniper Networks', warrantyExpiry: daysFromNow(320), lastUpdated: daysAgo(4), description: 'Distribution switch for Kirandul mine site fiber connectivity.' },
+    { id: 'NET-003', name: 'Fortinet FortiGate 600E Firewall', category: 'Networking', location: 'Bacheli DC', assignedUser: 'Demo User 08', status: 'Active', purchaseDate: daysAgo(290), vendor: 'Fortinet India', warrantyExpiry: daysFromNow(600), lastUpdated: daysAgo(9), description: 'Perimeter firewall with IPS, SSL inspection, and VPN termination.' },
+    { id: 'STG-401', name: 'NetApp FAS8300 Storage Array', category: 'Storage Device', location: 'Bacheli DC', assignedUser: 'Demo User 05', status: 'Active', purchaseDate: daysAgo(400), vendor: 'NetApp India', warrantyExpiry: daysFromNow(380), lastUpdated: daysAgo(3), description: 'Primary SAN storage — 480 TB usable capacity for VM and backup workloads.' },
+    { id: 'STG-402', name: 'Dell EMC PowerVault ME5024', category: 'Storage Device', location: 'Bhubaneswar DR Site', assignedUser: 'Demo User 05', status: 'Active', purchaseDate: daysAgo(320), vendor: 'Dell Technologies', warrantyExpiry: daysFromNow(650), lastUpdated: daysAgo(11), description: 'Disaster recovery storage replica for Bacheli primary data center.' },
+    { id: 'SRV-104', name: 'IBM Power S1022 Server', category: 'Server', location: 'Bhubaneswar DR Site', assignedUser: 'Demo User 05', status: 'Retired', purchaseDate: daysAgo(900), vendor: 'IBM India', warrantyExpiry: daysAgo(120), lastUpdated: daysAgo(50), description: 'Legacy DR server decommissioned after migration to Dell PowerEdge platform.' },
+    { id: 'NET-004', name: 'Aruba Wireless Controller 7240', category: 'Networking', location: 'Bellary Mine Office', assignedUser: 'Demo User 04', status: 'Warranty Expiring', purchaseDate: daysAgo(450), vendor: 'HPE Aruba', warrantyExpiry: daysFromNow(12), lastUpdated: daysAgo(2), description: 'Wireless LAN controller for Bellary-Hospet mine office campus Wi-Fi.' },
+    { id: 'DSK-017', name: 'HP ProDesk 400 G9 Desktop', category: 'Desktop', location: 'Bellary Mine Office', assignedUser: 'Demo User 03 (Viewer)', status: 'Active', purchaseDate: daysAgo(180), vendor: 'HP India', warrantyExpiry: daysFromNow(400), lastUpdated: daysAgo(16), description: 'Mine office administrative workstation.' },
+    { id: 'LPT-044', name: 'Dell Latitude 5540 Laptop', category: 'Laptop', location: 'Bhubaneswar DR Site', assignedUser: 'Demo User 06', status: 'Maintenance', purchaseDate: daysAgo(200), vendor: 'Dell Technologies', warrantyExpiry: daysFromNow(420), lastUpdated: daysAgo(5), description: 'Sent for keyboard replacement — ERP team field laptop.' },
+    { id: 'LIC-203', name: 'VMware vSphere Enterprise Plus', category: 'Software License', location: 'Bacheli DC', assignedUser: 'Demo User 05', status: 'Active', purchaseDate: daysAgo(210), vendor: 'Broadcom (VMware)', warrantyExpiry: daysFromNow(300), lastUpdated: daysAgo(13), description: 'Virtualization platform license for 4-host cluster.' },
+    { id: 'CCTV-303', name: 'Axis P3265-LVE Dome Camera (Batch)', category: 'CCTV', location: 'Bacheli Mine Perimeter', assignedUser: 'Demo User 08', status: 'Active', purchaseDate: daysAgo(100), vendor: 'Axis Communications', warrantyExpiry: daysFromNow(280), lastUpdated: daysAgo(18), description: 'Batch of 24 IP dome cameras deployed for perimeter monitoring.' },
+    { id: 'STG-403', name: 'Synology RS3621xs+ NAS', category: 'Storage Device', location: 'Kirandul Mine Office', assignedUser: 'Demo User 04', status: 'Active', purchaseDate: daysAgo(230), vendor: 'Synology', warrantyExpiry: daysFromNow(340), lastUpdated: daysAgo(7), description: 'Local NAS for mine site backup and document cache.' }
   ];
 }
 
 function initAssetsStore() {
-  if (localStorage.getItem(ASSETS_SEED_KEY)) {
-    try {
-      return JSON.parse(localStorage.getItem(ASSETS_KEY) || '[]');
-    } catch {
-      return getDefaultAssets();
+  try {
+    const stored = JSON.parse(localStorage.getItem(ASSETS_KEY) || '[]');
+    if (stored.length && (stored[0].assignedUser?.includes('Shri') || stored.some(a => a.location?.includes('Delhi')) || stored.some(a => a.purchaseDate?.startsWith('2021-08-12')))) {
+      const assets = getDefaultAssets();
+      localStorage.setItem(ASSETS_KEY, JSON.stringify(assets));
+      return assets;
     }
-  }
+    if (stored.length) return stored;
+  } catch { /* use defaults */ }
   const assets = getDefaultAssets();
   localStorage.setItem(ASSETS_KEY, JSON.stringify(assets));
   localStorage.setItem(ASSETS_SEED_KEY, 'true');
@@ -204,6 +206,10 @@ const AssetManager = {
   filter: 'all',
   editingId: null,
   deleteTargetId: null,
+  sortField: 'id',
+  sortDir: 'asc',
+  currentPage: 1,
+  pageSize: 10,
 
   init() {
     initAssetsStore();
@@ -219,6 +225,7 @@ const AssetManager = {
   bindEvents() {
     document.getElementById('assetSearch').addEventListener('input', (e) => {
       this.search = e.target.value;
+      this.currentPage = 1;
       this.renderTable();
     });
 
@@ -227,6 +234,22 @@ const AssetManager = {
         document.querySelectorAll('.docs-filters .filter-chip').forEach(c => c.classList.remove('active'));
         chip.classList.add('active');
         this.filter = chip.getAttribute('data-filter');
+        this.currentPage = 1;
+        this.renderTable();
+      });
+    });
+
+    document.querySelectorAll('#assetTable .sortable-th').forEach(th => {
+      th.style.cursor = 'pointer';
+      th.addEventListener('click', () => {
+        const field = th.dataset.sort;
+        if (this.sortField === field) {
+          this.sortDir = this.sortDir === 'asc' ? 'desc' : 'asc';
+        } else {
+          this.sortField = field;
+          this.sortDir = 'asc';
+        }
+        this.currentPage = 1;
         this.renderTable();
       });
     });
@@ -432,6 +455,11 @@ const AssetManager = {
     document.getElementById('kpiWarranty').textContent = stats.warrantySoon;
   },
 
+  goToPage(p) {
+    this.currentPage = p;
+    this.renderTable();
+  },
+
   renderTable() {
     const emptyState = document.getElementById('assetsEmptyState');
     const tableWrap = document.getElementById('assetsTableWrap');
@@ -458,15 +486,36 @@ const AssetManager = {
 
     const filtered = filterAssets(this.assets, this.search, this.filter);
     const tbody = document.getElementById('assetTableBody');
+    const pagDiv = document.getElementById('assetPagination');
     const canEdit = hasPermission('update');
     const canDelete = hasPermission('delete');
 
     if (filtered.length === 0) {
-      tbody.innerHTML = `<tr><td colspan="10"><div class="docs-no-results">No assets match your search or filter criteria.</div></td></tr>`;
+      tbody.innerHTML = `<tr><td colspan="11"><div class="docs-no-results">No assets match your search or filter criteria.</div></td></tr>`;
+      if (pagDiv) pagDiv.innerHTML = '';
       return;
     }
 
-    tbody.innerHTML = filtered.map(asset => {
+    filtered.sort((a, b) => {
+      let valA = a[this.sortField] || '';
+      let valB = b[this.sortField] || '';
+      let cmp = String(valA).localeCompare(String(valB));
+      return this.sortDir === 'asc' ? cmp : -cmp;
+    });
+
+    document.querySelectorAll('#assetTable .sortable-th').forEach(th => {
+      const field = th.dataset.sort;
+      const baseText = th.getAttribute('data-label') || th.textContent.replace(/[↕▲▼]/g, '').trim();
+      if (!th.getAttribute('data-label')) th.setAttribute('data-label', baseText);
+      th.textContent = field === this.sortField ? `${baseText} ${this.sortDir === 'asc' ? '▲' : '▼'}` : `${baseText} ↕`;
+    });
+
+    const totalPages = Math.ceil(filtered.length / this.pageSize) || 1;
+    if (this.currentPage > totalPages) this.currentPage = totalPages;
+    const startIdx = (this.currentPage - 1) * this.pageSize;
+    const pageItems = filtered.slice(startIdx, startIdx + this.pageSize);
+
+    tbody.innerHTML = pageItems.map(asset => {
       const warranty = getWarrantyBadge(asset.warrantyExpiry);
       const rowClass = warranty?.cls === 'expired' || warranty?.cls === 'warn-15'
         ? 'warranty-row-critical'
@@ -485,6 +534,7 @@ const AssetManager = {
         <td>${escHtml(asset.assignedUser)}</td>
         <td><span class="asset-status-badge ${ASSET_STATUS_CLASS[asset.status] || 'inactive'}">${escHtml(asset.status)}</span></td>
         <td>${formatDate(asset.purchaseDate)}</td>
+        <td>${escHtml(asset.vendor || '—')}</td>
         <td>${formatDate(asset.warrantyExpiry)}${warrantyHtml}</td>
         <td>${formatDate(asset.lastUpdated)}</td>
         <td>
@@ -496,6 +546,24 @@ const AssetManager = {
         </td>
       </tr>`;
     }).join('');
+
+    if (pagDiv) {
+      if (totalPages <= 1) {
+        pagDiv.innerHTML = `<span style="font-size:0.85rem;color:var(--text-muted, #94a3b8);padding:8px 0;display:inline-block;">Showing all ${filtered.length} assets</span>`;
+      } else {
+        pagDiv.innerHTML = `
+          <div style="display:flex;align-items:center;justify-content:space-between;width:100%;flex-wrap:wrap;gap:8px;padding:12px 4px;">
+            <span style="font-size:0.85rem;color:var(--text-muted, #94a3b8);">Showing ${startIdx + 1}–${Math.min(startIdx + this.pageSize, filtered.length)} of ${filtered.length} assets</span>
+            <div style="display:flex;gap:6px;align-items:center;">
+              <button class="btn-action" ${this.currentPage === 1 ? 'disabled style="opacity:0.4;cursor:not-allowed;"' : ''} onclick="AssetManager.goToPage(${this.currentPage - 1})">Prev</button>
+              ${Array.from({length: totalPages}, (_, i) => i + 1).map(p => `
+                <button class="btn-action ${p === this.currentPage ? 'primary' : ''}" onclick="AssetManager.goToPage(${p})">${p}</button>
+              `).join('')}
+              <button class="btn-action" ${this.currentPage === totalPages ? 'disabled style="opacity:0.4;cursor:not-allowed;"' : ''} onclick="AssetManager.goToPage(${this.currentPage + 1})">Next</button>
+            </div>
+          </div>`;
+      }
+    }
   },
 
   renderAnalytics() {

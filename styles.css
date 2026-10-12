@@ -532,6 +532,28 @@ button { cursor: pointer; font-family: inherit; }
 
 .main-footer a:hover { color: var(--accent); }
 
+.main-footer .demo-link {
+  color: #94A3B8;
+  font-size: 0.9rem;
+  display: block;
+  padding: 5px 0;
+  cursor: default;
+}
+
+.demo-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 1px 5px;
+  border-radius: 4px;
+  background: rgba(255, 184, 28, 0.15);
+  color: #FFB81C;
+  border: 1px solid rgba(255, 184, 28, 0.3);
+  margin-left: 6px;
+  vertical-align: middle;
+}
+
 .footer-badge {
   background: rgba(255, 255, 255, 0.06);
   border: 1px solid rgba(255, 255, 255, 0.1);
