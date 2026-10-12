@@ -26,7 +26,18 @@ All portal data is persisted locally in the browser via `localStorage` with seed
 - **Officer (`Demo User 02`):** Create and update permissions for tickets, assets, and documents; read-only for audit logs.
 - **Viewer (`Demo User 03`):** Read-only viewing permissions across all modules; action buttons disabled.
 
-## 5. Limitations & Future Scope
+## 5. Facts & Sources
+Key corporate metrics and timeline events align with public disclosures:
+- **Incorporation & Status:** 1958 under Ministry of Steel; Miniratna (1998); Navratna (2008).
+- **Revenue & PAT:** ₹23,000+ Cr revenue (FY 2024-25; PAT ₹6,693 Cr).
+- **Workforce:** 5,700+ employees (as of Mar 2026).
+- **Production & Capacity:** ~45 MT output milestone; Bacheli capacity 18.8 MTPA (planned expansion to 35 MTPA); Vision 2030 target of 100 MTPA (more than double current output).
+- **Active Complexes:** 5 operating complexes (Bailadila Bacheli, Bailadila Kirandul, Donimalai, Kumaraswamy, Panna).
+- **Panna Diamond Mine:** 4,602 carats produced in FY 2024-25.
+- **Nagarnar:** Demerged in Oct 2022 into NMDC Steel Ltd (NSL) and separately listed.
+- **Prototype Data:** All operational logs, IT asset serials, hardware inventory, circulars, and tickets remain sample demonstration data.
+
+## 6. Limitations & Future Scope
 - **Prototype Scope:** Client-side static prototype using mock data; not connected to production SAP ERP or Active Directory.
 - **Security:** Demo client-side session store; production deployment requires OAuth 2.0 / SAML SSO and secure server-side API endpoints.
 - **Data Persistence:** Scoped to the local browser; production requires PostgreSQL or enterprise DBMS integration.

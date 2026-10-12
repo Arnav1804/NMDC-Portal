@@ -7,8 +7,11 @@
 // DATA CONSTANTS (Single Source of Truth)
 // ============================================
 const DATA_CONSTANTS = {
-  EMPLOYEES: '8,500+ (sample)',
-  EMPLOYEES_NUM: '8,500+',
+  EMPLOYEES: '5,700+ (as of Mar 2026)',
+  EMPLOYEES_NUM: '5,700+',
+  REVENUE: '₹23,000+ Cr (FY 2024-25)',
+  PAT: '₹6,693 Cr (FY 2024-25)',
+  BACHELI_CAPACITY: '18.8 MTPA (planned expansion to 35 MTPA)',
   DISCLAIMER: 'Prototype by Arnav Yadu, vocational training at NMDC Bacheli Complex, 2026. Not an official NMDC website. All data is sample data.'
 };
 

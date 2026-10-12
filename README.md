@@ -99,6 +99,29 @@ Alternatively, open `index.html` directly in any modern browser.
 
 ---
 
+## Facts & Sources
+
+Key corporate milestones and figures referenced in this prototype are aligned with verified public reporting (as of FY 2024–26):
+
+| Fact / Metric | Verified Value | Source / Reference |
+|---|---|---|
+| **Incorporation** | 1958 | Ministry of Steel overview / Public records |
+| **Administrative Control** | Ministry of Steel, Government of India | Ministry of Steel overview |
+| **Navratna Status** | Conferred in 2008 | IndianPSU / Official reporting |
+| **Miniratna Status** | Conferred in 1998 | IndianPSU archives |
+| **Annual Revenue** | ₹23,000+ Cr (FY 2024-25; PAT ₹6,693 Cr) | Ministry of Steel overview / NMDC financial reporting |
+| **Total Workforce** | 5,700+ employees (as of Mar 2026) | NMDC 68th Annual Report |
+| **Production Output** | ~45 MT (FY 2023-24 milestone; FY 2024-25: 44.07 MT produced, 44.40 MT sold) | PSU Connect / NMDC Annual Reports |
+| **Vision 2030 Capacity** | 100 MTPA target (more than doubling capacity) | NMDC 66th AGM / Ministry of Steel |
+| **Bacheli Complex Capacity** | 18.8 MTPA (planned expansion to 35 MTPA) | NMDC 68th Annual Report |
+| **Operating Complexes** | 5 Complexes (Bacheli, Kirandul, Donimalai, Kumaraswamy, Panna) | NMDC Annual Reports |
+| **Diamond Production** | Panna Diamond Mine (FY 2024-25: 4,602 carats) | NMDC Annual Report |
+| **Nagarnar Steel Plant** | Demerged in Oct 2022 into NMDC Steel Ltd (NSL) | Ministry of Steel / Corporate filings |
+
+> **Note on Prototype Data:** Operational logs, IT asset serials, hardware inventory, departmental circulars, helpdesk tickets, and staff contact details are illustrative sample data for academic demonstration only.
+
+---
+
 ## Limitations & Future Scope
 
 - **Mock Authentication:** Authentication and session management are executed on the client using `localStorage`. Production rollout would integrate OAuth 2.0 / SAML SSO backed by central active directory services.
